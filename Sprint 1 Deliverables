@@ -1,6 +1,20 @@
 Requirement 1: For the moment we've decided on a dockerized application approach for our framework.
 
 Requirement 2: We've decided on this headset. https://www.emotiv.com/product/emotiv-epoc-x-14-channel-mobile-brainwear/
+List of Links used when determining what headset to buy:
+- http://learn.neurotechedu.com/headsets/
+- https://the-unwinder.com/reviews/best-eeg-headset/
+- https://www.mindtecstore.com/EEG-Headset-comparison-table
+- https://www.emotiv.com/shop/?campaignid=13559905177&adgroupid=131528945231&network=g&device=c&utm_term=eeg%20machines&utm_source=google&utm_medium=ppc&utm_content=591122372097&utm_campaign=LAI:+General:+EEG+Research&hsa_acc=5401365090&hsa_cam=13559905177&hsa_grp=131528945231&hsa_ad=591122372097&hsa_src=g&hsa_tgt=kwd-338171676875&hsa_kw=eeg%20machines&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gclid=CjwKCAjw-L-ZBhB4EiwA76YzOXJRIpeRU-A0fKSZVRpzuaDsqBU7QelsByhu__1AOfxqhCpGBag2CRoCXaAQAvD_BwE
+- https://shop.openbci.com/products/all-in-one-biosensing-r-d-bundle
+- https://www.gtec.at/product/gnautilus-research/
+
+The Emotive headset ended up winning because we found out,
+that we didn't care about having as many electrodes as possible 
+like we though we might. The three biggests pros for the emotiv
+headset are that it has the temporal resolution of (1 ms), 
+can be set up an ran within 10 minutes, and has propritary 
+software to record EEG data for us.
 
 Requirement 3: The Github has been created. You're looking at it.
 
