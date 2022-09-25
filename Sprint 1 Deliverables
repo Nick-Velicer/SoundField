@@ -1,0 +1,10 @@
+Requirement 1: For the moment we've decided on a dockerized application approach for our framework.
+
+Requirement 2: We've decided on this headset. https://www.emotiv.com/product/emotiv-epoc-x-14-channel-mobile-brainwear/
+
+Requirement 3: The Github has been created. You're looking at it.
+
+Requirement 4: The proper push reviews have been set up.
+
+Requirement 5: We did research into the visualization methods. Our current leading contenders are Matplotlib: a library for Python,
+or Matlab: third-party data visualization software. We'll be creating demos for those two and others to see which we prefer next sprint.
