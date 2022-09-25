@@ -18,13 +18,14 @@ software to record EEG data for us.
 
 Requirement 12: The Github has been created. You're looking at it.
 
-Requirement 8: The proper push reviews have been set up.
+Requirement 9: The proper push reviews have been set up.
 
-Requirement 11: We did research into the visualization methods. Our current leading contenders are Matplotlib: a library for Python,
+Requirement 6: We did research into the visualization methods. Our current leading contenders are Matplotlib: a library for Python,
 or Matlab: third-party data visualization software. We'll be creating demos for those two and others to see which we prefer next sprint.
 
-Requirement 6: We did background research into the EEG data. Here are the resources we found:
+Requirement 12: We did background research into the EEG data. Here are the resources we found:
 https://sccn.ucsd.edu/eeglab/index.php
 https://www.eecs.qmul.ac.uk/mmv/datasets/deap/download.html
 https://www.kaggle.com/datasets/birdy654/eeg-brainwave-dataset-feeling-emotions
-The two PDFs included in the folder.
+https://www.researchgate.net/publication/261080874_EEG_Databases_for_Emotion_Recognition
+https://www.nature.com/articles/s41598-021-86345-5
