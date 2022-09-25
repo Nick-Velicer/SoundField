@@ -8,3 +8,9 @@ Requirement 4: The proper push reviews have been set up.
 
 Requirement 5: We did research into the visualization methods. Our current leading contenders are Matplotlib: a library for Python,
 or Matlab: third-party data visualization software. We'll be creating demos for those two and others to see which we prefer next sprint.
+
+Requirement 6: We did background research into the EEG data. Here are the resources we found:
+https://sccn.ucsd.edu/eeglab/index.php
+https://www.eecs.qmul.ac.uk/mmv/datasets/deap/download.html
+https://www.kaggle.com/datasets/birdy654/eeg-brainwave-dataset-feeling-emotions
+The two PDFs included in the folder.
