@@ -1,6 +1,6 @@
-Requirement 1: For the moment we've decided on a dockerized application approach for our framework.
+Requirement 2: For the moment we've decided on a dockerized web application approach for our framework (Frontend <-> Backend <-> Database).
 
-Requirement 2: We've decided on this headset. https://www.emotiv.com/product/emotiv-epoc-x-14-channel-mobile-brainwear/
+Requirement 1: We've decided on this headset. https://www.emotiv.com/product/emotiv-epoc-x-14-channel-mobile-brainwear/
 List of Links used when determining what headset to buy:
 - http://learn.neurotechedu.com/headsets/
 - https://the-unwinder.com/reviews/best-eeg-headset/
@@ -16,9 +16,9 @@ headset are that it has the temporal resolution of (1 ms),
 can be set up an ran within 10 minutes, and has propritary 
 software to record EEG data for us.
 
-Requirement 3: The Github has been created. You're looking at it.
+Requirement 12: The Github has been created. You're looking at it.
 
-Requirement 4: The proper push reviews have been set up.
+Requirement 8: The proper push reviews have been set up.
 
-Requirement 5: We did research into the visualization methods. Our current leading contenders are Matplotlib: a library for Python,
+Requirement 11: We did research into the visualization methods. Our current leading contenders are Matplotlib: a library for Python,
 or Matlab: third-party data visualization software. We'll be creating demos for those two and others to see which we prefer next sprint.
