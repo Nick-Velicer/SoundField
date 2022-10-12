@@ -1,0 +1,15 @@
+Requirement 3: We have placed the order for the headset 
+    and the screenshot of the order has been placed in 
+    this folder.
+
+Requirement 5: We have all dones our own demos and have played around
+    in different artistic libraries. We decided that any form of 
+    Processing (Processing, P5.js, Processing.py) is the best solution.
+
+Requirement 8: The initial dataset we found on Kaggle has
+    been put in the base /Data folder.
+
+Requirement 20: EEGBaseVisualization.py is the script that 
+    was used to demo the EEG data that we got from Kaggle.
+    The EEGBaseVisualization_1.png and EEGBaseVisualization_2.png
+    files are some of the outputs from it.
