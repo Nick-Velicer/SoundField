@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html>
     <script src="page_functionality.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <body>
-        <h1 style="text-align:center">SoundField Video Output</h1>
-        <div id="video1" style="float: left; margin-left:20%">
-            <video width="320" height="240" controls>
-                <source src="Videos/video1.mp4" type="video/mp4">
-            </video>
-            <h3 style="text-align:center">Channel Data</h3>
+        <h1 class="title">SoundField</h1>
+        <h2 class="subtitle">Creating art from the active brain.</h2>
+        <h2 style="margin-left:9%">_____________________________________</h2>
+        <div id="columns" style="width: 100%">
+            <div id="column1">
+                <h1 style="margin-bottom: 20px">Our Data:</h1>
+                <video autoplay muted loop width="600">
+                    <source src="Videos/EEGBaseAnimation.mp4" type="video/mp4">
+                </video>
+                <h1>Our Team:</h1>
+                <h2>Anna Burns</h2>
+                <h2>Davis Johnson</h2>
+                <h2>Zach Misic</h2>
+                <h2>Michael Perry</h2>
+                <h2>Nick Velicer</h2>
+            </div>
+            <div id="column2" style="float: right; margin-right: 10%">
+                <video autoplay loop muted width="480" height="480">
+                    <source src="Videos/harmonograph.mp4" type="video/mp4">
+                </video>
+                <h1 style="margin-top: -2px">Our Art:</h1>
+            </div>
         </div>
-        <div id="video2" style="float: right; margin-right:20%">
-            <video width="320" height="240" controls>
-                <source src="Videos/video2.mp4" type="video/mp4">
-            </video>
-            <h3 style="text-align:center">Animation Data</h3>
-        </div>
-        <table id="display_table" style="width:100%">
-            <tr>
-              <td id="AF3">Channel 1</td>
-              <td id="AF4">Channel 2</td>
-              <td id="F3">Channel 3</td>
-              <td id="F4">Channel 4</td>
-              <td id="F7">Channel 5</td>
-              <td id="F8">Channel 6</td>
-              <td id="FC5">Channel 7</td>
-              <td id="FC6">Channel 8</td>
-              <td id="O1">Channel 9</td>
-              <td id="O2">Channel 10</td>
-              <td id="P7">Channel 11</td>
-              <td id="P8">Channel 12</td>
-              <td id="T7">Channel 13</td>
-              <td id="T8">Channel 14</td>
-            </tr>
-          </table>
-          <br>
-          <button onclick="showData()">Click me</button>
-          <input type="file" accept=".csv" id="file_in"/>
     </body>
 </html>

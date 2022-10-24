@@ -42,25 +42,28 @@ function sleep(ms) {
 }
 
 async function showData() {
-    for (var i = 0; i < csv_data.AF3.length; i++) {
-        //I know there's a better way to do this
-        //but it's 2 a.m. and I don't care
-        console.log(csv_data.AF3[i]);
-        document.getElementById("AF3").innerHTML = csv_data.AF3[i];
-        document.getElementById("AF4").innerHTML = csv_data.AF4[i];
-        document.getElementById("F3").innerHTML = csv_data.F3[i];
-        document.getElementById("F4").innerHTML = csv_data.F4[i];
-        document.getElementById("F7").innerHTML = csv_data.F7[i];
-        document.getElementById("F8").innerHTML = csv_data.F8[i];
-        document.getElementById("FC5").innerHTML = csv_data.FC5[i];
-        document.getElementById("FC6").innerHTML = csv_data.FC6[i];
-        document.getElementById("O1").innerHTML = csv_data.O1[i];
-        document.getElementById("O2").innerHTML = csv_data.O2[i];
-        document.getElementById("P7").innerHTML = csv_data.P7[i];
-        document.getElementById("P8").innerHTML = csv_data.P8[i];
-        document.getElementById("T7").innerHTML = csv_data.T7[i];
-        document.getElementById("T8").innerHTML = csv_data.T8[i];
-        //adjust this value to make values change slower or faster
-        await sleep(210);
-    }
+  for (var i = 0; i < csv_data.AF3.length; i++) {
+      //I know there's a better way to do this
+      //but it's 2 a.m. and I don't care
+      console.log(csv_data.AF3[i]);
+      document.getElementById("AF3").innerHTML = csv_data.AF3[i];
+      document.getElementById("AF4").innerHTML = csv_data.AF4[i];
+      document.getElementById("F3").innerHTML = csv_data.F3[i];
+      document.getElementById("F4").innerHTML = csv_data.F4[i];
+      document.getElementById("F7").innerHTML = csv_data.F7[i];
+      document.getElementById("F8").innerHTML = csv_data.F8[i];
+      document.getElementById("FC5").innerHTML = csv_data.FC5[i];
+      document.getElementById("FC6").innerHTML = csv_data.FC6[i];
+      document.getElementById("O1").innerHTML = csv_data.O1[i];
+      document.getElementById("O2").innerHTML = csv_data.O2[i];
+      document.getElementById("P7").innerHTML = csv_data.P7[i];
+      document.getElementById("P8").innerHTML = csv_data.P8[i];
+      document.getElementById("T7").innerHTML = csv_data.T7[i];
+      document.getElementById("T8").innerHTML = csv_data.T8[i];
+      //adjust this value to make values change slower or faster
+      await sleep(210);
+  }
 }
+
+
+
