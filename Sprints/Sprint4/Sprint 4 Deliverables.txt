@@ -1,0 +1,18 @@
+Requirement 4: Get EEG Heaset Up and Running
+    See images in this folder.
+
+Requirement 7: Figure Out EEG Data Gathering
+    It seems that because of Emotiv's proprietary software that
+    you have to use to get the headset running, we can't have any
+    streamlined processes that will take the live EEG data into
+    the generative art work program. We'll have to run sessions of 
+    the headset and then upload the eeg data files into the program
+    after we download it from the Emotiv software. This isn't necessarily
+    a problem though! We can scale up our web services so that anyone
+    can upload their eeg data and get generative art from it.
+
+Requirement 17: Write Video Script
+    See "Presentation Script.txt" file
+
+Requirement 18: Present and Record Video Presentation
+    This has been uploaded to canvas.
