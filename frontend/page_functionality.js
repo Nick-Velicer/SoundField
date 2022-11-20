@@ -1,3 +1,13 @@
+/*
+Attempted functionality to display the EEG data embedded
+as html elements for page visuals, ultimately unsuccessful
+but still here just in case we want to try again later
+
+Last edited by
+Name: Nick Velicer
+Date: mid Octoberish
+*/
+
 csv_data = []
 
 //.csv read from:
