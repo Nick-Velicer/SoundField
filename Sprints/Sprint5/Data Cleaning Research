@@ -1,0 +1,14 @@
+Here is a list of the sources we used to learn how to implement preprocessing on the EEG data. Next sprint we plan on making an algorithm we can use.
+Most every source suggested or taught about how to use the MNE library in Python, so that's what w'll be using.
+
+User manual for our headset's companion software:
+https://emotiv.gitbook.io/emotivpro-v3/
+
+MNE tutorials:
+http://learn.neurotechedu.com/preprocessing/#what-is-preprocessing
+https://mne.tools/stable/auto_tutorials/intro/10_overview.html#sphx-glr-auto-tutorials-intro-10-overview-py
+https://neuraldatascience.io/7-eeg/erp_preprocessing.html
+https://g0rella.github.io/gorella_mwn/preprocessing_eeg.html
+
+Rutgers paper on a similar project that we looked at to see their pipeline:
+https://s3.amazonaws.com/arena-attachments/399135/8600b7c679abee7ec8bf4a79ed733b5e.pdf
