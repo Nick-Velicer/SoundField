@@ -1,5 +1,16 @@
 version: '3'
 services:
+  django:
+    build:
+      context: .
+      dockerfile: Dockerfile-backend
+    image: soundfield-backend
+    container_name: django
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+
   db:
     image: postgres
     environment:
