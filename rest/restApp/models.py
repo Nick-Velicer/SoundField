@@ -28,6 +28,7 @@ class DataPoint(models.Model):
     ch12 = models.FloatField()
     ch13 = models.FloatField()
     ch14 = models.FloatField()
+    userId = models.IntegerField()
 
     class Meta:
         ordering = ['idNum']

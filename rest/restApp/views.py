@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from restApp.models import DataPoint
 from restApp.serializers import DataPointSerializer
 
 
+@api_view(['GET', 'POST'])
 def DataPointList(request):
     """
     List all data points or create a new one
@@ -44,6 +46,7 @@ def DataPointList(request):
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
 
+@api_view(['GET', 'PUT', 'DELETE'])
 def DataPointDetail(request, pk):
     """
     Getter, setter, or delete for a specific data point
