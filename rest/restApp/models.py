@@ -32,3 +32,24 @@ class DataPoint(models.Model):
 
     class Meta:
         ordering = ['idNum']
+
+class RawEEGFile(models.Model):
+    """
+    This Class is used to serialize the data from the raw EEG files.
+    Meaning, only the data inside the file is held but will be transfered to
+    Datapoint objects that we'll save in the database.
+    """
+    AF3 = models.FloatField()
+    AF4 = models.FloatField()
+    F3 = models.FloatField()
+    F4 = models.FloatField()
+    F7 = models.FloatField()
+    F8 = models.FloatField()
+    FC5 = models.FloatField()
+    FC6 = models.FloatField()
+    O1 = models.FloatField()
+    O2 = models.FloatField()
+    P7 = models.FloatField()
+    P8 = models.FloatField()
+    T7 = models.FloatField()
+    T8 = models.FloatField()

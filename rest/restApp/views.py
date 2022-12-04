@@ -6,6 +6,11 @@ from rest_framework.parsers import JSONParser
 from restApp.models import DataPoint
 from restApp.serializers import DataPointSerializer
 
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+
 
 @api_view(['GET', 'POST'])
 def DataPointList(request):
@@ -18,6 +23,7 @@ def DataPointList(request):
         serializer = DataPointSerializer(DataPoints, many=True)
         return JsonResponse(serializer.data, safe=False)
         '''
+        logger.info("something happened")
         #temporary static data point just to test api response
         point = {"idNum":"0",
                  "ch1":"1",
