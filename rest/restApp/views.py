@@ -1,10 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework import generics, status
 from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
-from restApp.models import DataPoint
+from rest_framework.response import Response
+from restApp.models import DataPoint, EEGData, Session
 from restApp.serializers import DataPointSerializer
+from restApp.serializers import FileUploadSerializer, SaveFileSerializer
+import io, csv, pandas as pd
+
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 @api_view(['GET', 'POST'])
@@ -18,6 +26,7 @@ def DataPointList(request):
         serializer = DataPointSerializer(DataPoints, many=True)
         return JsonResponse(serializer.data, safe=False)
         '''
+        logger.info("something happened")
         #temporary static data point just to test api response
         point = {"idNum":"0",
                  "ch1":"1",
@@ -71,3 +80,26 @@ def DataPointDetail(request, pk):
     elif request.method == 'DELETE':
         point.delete()
         return HttpResponse(status=204)
+
+
+class UploadFileView(generics.CreateAPIView):
+    serializer_class = FileUploadSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        file = serializer.validated_data['file']
+        reader = pd.read_csv(file)
+
+        # session = Session(sampling_rate=128)
+        # session.save()
+        # logger.log("New Session ID: " + str(session.id))
+
+        count = 0
+        for idx, row in reader.iterrows():
+            logger.info(str(idx))
+            logger.info(str(row))
+            count += 1
+            if count > 20:
+                break
+        return Response({"status": "success"}, status.HTTP_201_CREATED)
