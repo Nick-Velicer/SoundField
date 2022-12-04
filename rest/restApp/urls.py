@@ -14,4 +14,5 @@ from restApp import views
 urlpatterns = [
     path('restApp/', views.DataPointList),
     path('restApp/<int:pk>/', views.DataPointDetail),
+    path('upload/', views.UploadFileView.as_view(), name='upload-file')
 ]

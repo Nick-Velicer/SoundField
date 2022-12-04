@@ -8,7 +8,7 @@ Date: 11/19
 '''
 
 from rest_framework import serializers
-from restApp.models import DataPoint, RawEEGFile
+from restApp.models import DataPoint, EEGData
 
 
 class DataPointSerializer(serializers.ModelSerializer):
@@ -43,5 +43,5 @@ class SaveFileSerializer(serializers.Serializer):
     serializer and validate it has all the right values.
     """
     class Meta:
-        model = RawEEGFile
+        model = EEGData
         fields = "__all__"
