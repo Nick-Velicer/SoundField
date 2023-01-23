@@ -1,10 +1,10 @@
 version: '3'
 services:
   django:
-    build: ./rest
-    command: python manage.py runserver 0.0.0.0:8000 & python manage.py makemigrations restApp & python manage.py migrate
+    build: ./backend
+    command: python manage.py runserver 0.0.0.0:8000 & python manage.py makemigrations api & python manage.py migrate
     volumes:
-      - ./rest:/app
+      - ./backend:/app
     depends_on:
       - db
     ports:
