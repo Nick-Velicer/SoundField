@@ -1,5 +1,0 @@
-django
-djangorestframework
-pygments
-psycopg2
-pandas
