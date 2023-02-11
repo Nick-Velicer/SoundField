@@ -41,3 +41,6 @@ To test the front end (starting from .../Soundfield):
        frontend/soundfield_app and run npm start. This won't
        necessarily have the same API interactions, but is much
        faster than rebuilding the entire Docker application
+
+    5. If you ever need to clean the docker build, use:
+       docker system prune 

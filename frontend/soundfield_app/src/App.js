@@ -29,6 +29,7 @@ function App() {
       <div id="columns" style={{width: "100%"}}>
           <div id="column1">
               <h1 style={{marginBottom: "20px"}}>Our Data:</h1>
+              <video src={"Videos/EEGBaseAnimation.mp4"} width="600" height="200" autoPlay={true} muted={true} type="video/mp4"/>
               <h1>Our Team:</h1>
               <h2>Anna Burns</h2>
               <h2>Davis Johnson</h2>
@@ -38,6 +39,7 @@ function App() {
           </div>
           <div id="column2" style={{float: "right", marginRight: "10%"}}>
               <h1 style={{marginTop: "-2px"}}>Our Art:</h1>
+              <video src={"Videos/harmonograph.mp4"} width="480" height="480" autoPlay={true} muted={true} type="video/mp4"/>
           </div>
       </div>
       <p style={{color: "white"}}>Temporary API testing:</p>
