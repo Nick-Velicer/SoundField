@@ -29,11 +29,15 @@ To test the rest app (starting from .../Soundfield):
        access to the corresponding api endpoints
 
 To test the front end (starting from .../Soundfield):
-    1. Compile and start the docker containers:
+    1. Build new Docker containers with updates:
+       docker-compose build
        docker-compose up
     
-    2. Open localhost:8080 in browser, currently only
-       displaying NGINX confirmation
+    2. Open localhost:3000 in browser to see the full app
     
-    3. To stop the containers, either go through
-       Docker Desktop or run docker-compose down
+    3. To stop the containers, run ctrl+c in the same terminal
+
+    4. To just build and test the front end, navigate to
+       frontend/soundfield_app and run npm start. This won't
+       necessarily have the same API interactions, but is much
+       faster than rebuilding the entire Docker application

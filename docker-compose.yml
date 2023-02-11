@@ -20,6 +20,8 @@ services:
     volumes: 
       - ./db:/var/lib/postgresql/data
   frontend:
-    build: ./frontend
+    build: ./frontend/soundfield_app
     ports:
-      - "8080:80"
+      - "3000:3000"
+    stdin_open: true
+    tty: true

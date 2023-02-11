@@ -1,0 +1,59 @@
+
+@import url("https://fonts.googleapis.com/css?family=Roboto Mono");
+.title {
+    margin-left: 10%;
+    margin-top: 4%;
+    font-size: 70px;
+}
+
+.subtitle {
+    display: inline;
+    margin-left: 10%;
+}
+
+h1 {
+    color: white;
+    font-family: Roboto Mono;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: white;
+    text-align: left;
+    font-family: sans-serif;
+    padding-left: 18px;
+    font-size: 20.5px;
+    margin-bottom: -10px;
+}
+
+h3 {
+    color: white;
+    text-align: left;
+    font-size: 20.5px;
+    padding-left: 18px;
+    font-family: sans-serif;
+}
+
+#columns {
+    display: inline-block;
+}
+
+body {
+    background-color: black;
+}
+
+td {
+    color: white;
+    text-align: left;
+}
+
+#dataChoose {
+    margin-top: 50px;
+}
+
+#column1 {
+    float: left;
+    margin-left: 10%;
+    padding-top: 20px;
+}
