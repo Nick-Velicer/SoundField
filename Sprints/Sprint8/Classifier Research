@@ -1,0 +1,77 @@
+Classifier Research Compiled
+
+Kaggle Database:
+GAMEEMO data
+https://www.kaggle.com/datasets/sigfest/database-for-emotion-recognition-system-gameemo/versions/1?resource=download-directory
+GAMEEMO Paper 
+“Database for an emotion recognition system based on EEG signals and various computer games – GAMEEMO”
+https://www.sciencedirect.com/science/article/pii/S1746809420301075?via%3Dihub
+“An Analysis of Game-Related Emotions Using EMOTIV EPOC” 
+https://annals-csis.org/Volume_15/drp/pdf/296.pdf
+Not the same data, but similar paper
+
+“Detecting Emotion from EEG Signals Using the Emotive Epoc Device”
+http://www.cs.tufts.edu/~jacob/250aff/ramirez.pdf
+	
+Linear Discriminant Analysis (LDA) and Support Vector Machines (SVM) for classifying emotional state for each segment
+Results obtained with OpenVibe software
+Standard 10-fold cross evaluation
+
+“A review of classification algorithms for EEG-based brain–computer interfaces: a 10 year update”
+https://iopscience.iop.org/article/10.1088/1741-2552/aab2f2/meta
+Feature extraction and selection have many benefits
+LDA and SVM methods are most popular for BCI classification, but need initial calibration and training data
+Adaptive classifiers prove still effective but can use limited initial calibration/training data
+
+Video going from emotiv pro to OpenVibe software:
+https://www.youtube.com/watch?v=x8841d5RfFY
+
+OpenVibe Tutorials:
+*Note that they have many good tutorials on open vibe, need Windows or Linux to download, I will look more into that
+Classifier trainer tutorial:
+http://openvibe.inria.fr/documentation/1.0.1/Doc_BoxAlgorithm_ClassifierTrainer.html
+Tutorial on using python with OpenVibe:
+http://openvibe.inria.fr/tutorial-using-python-with-openvibe/
+
+Powerpoint presentation on using OpenVibe and BCI:
+Has a lot of valuable information, need to actually follow along doing tutorial
+https://hal.science/hal-03374960/file/HandsOn_OV_CuttingEEG_2021.pdf
+Also, GitHub tutorial that goes along with it (I think)
+https://github.com/BCI-NET/BCI-OpenViBE-CuttingEEG2021/
+
+Linear Discriminant Analysis:
+What is it and how to use in python tutorial
+https://www.youtube.com/watch?v=9IDXYHhAfGA
+Another tutorial
+https://towardsdatascience.com/linear-discriminant-analysis-in-python-76b8b17817c2
+Another tutorial (this is the one I did in VScode)
+https://machinelearningmastery.com/linear-discriminant-analysis-with-python/
+
+“EPOC Emotiv EEG Basics”:
+https://www.researchgate.net/publication/361458671_EPOC_Emotiv_EEG_Basics
+Not peer reviewed, mainly advice
+They used EMOKIT to get raw data
+SVM and LDA classifiers
+
+Keynote on EEG and ML:
+https://www.youtube.com/watch?v=63k0Zc3yWb4
+She uses Azure ML for her machine learning
+Beginning is good intro
+Only got through 34 min, not sure how valuable it is
+SEED dataset:
+https://bcmi.sjtu.edu.cn/~seed/
+Emotional dataset!! Could be valuable, need to look more into
+
+“Deep learning-based electroencephalography analysis: a systematic review”:
+https://iopscience.iop.org/article/10.1088/1741-2552/ab260c/meta
+Haven’t read
+
+“Wavelet ELM-AE Based Data Augmentation and Deep Learning for Efficient Emotion Recognition Using EEG Recordings”:
+https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9810814
+Haven’t read
+
+
+
+
+
+
