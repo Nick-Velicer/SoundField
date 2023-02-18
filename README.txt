@@ -13,5 +13,5 @@ To build and run the full app:
     3. To stop the containers, run ctrl+c in the terminal window
        that Docker is running in
 
-    If you ever need to clean the docker build, use:
-    docker system prune 
+    4. If you ever need to clean the docker build, use:
+       docker system prune 
