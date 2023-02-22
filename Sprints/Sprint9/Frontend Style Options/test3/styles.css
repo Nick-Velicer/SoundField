@@ -1,0 +1,82 @@
+/*
+Styles for the web page, mostly concerning text styling
+and sizing for the minimal elements we have
+
+Last edited by
+Name: Nick Velicer
+Date: mid Octoberish
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Gajraj One");
+@import url("https://fonts.googleapis.com/css?family=Rubik Mono One");
+.title {
+    font-family: Gajraj One;
+    margin-left: 10%;
+    margin-top: 4%;
+    font-size: 70px;
+    color: #fec300;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.subtitle {
+    font-family: Rubik Mono One;
+    display: inline;
+    margin-left: 9%;
+    color: #ffbb00;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+h1 {
+    font-family: Rubik Mono One;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #fec300;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+h2 {
+    color: rgb(149, 14, 122);
+    text-align: left;
+    font-family: sans-serif;
+    padding-left: 18px;
+    font-size: 20.5px;
+    margin-bottom: -10px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+h3 {
+    color: white;
+    text-align: left;
+    font-size: 20.5px;
+    padding-left: 18px;
+    font-family: sans-serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#columns {
+    display: inline-block;
+}
+
+body {
+    background-image: url("https://wallpapercave.com/wp/wp1895659.jpg");
+}
+
+td {
+    color: white;
+    text-align: left;
+}
+
+#dataChoose {
+    margin-top: 50px;
+}
+
+#column1 {
+    float: left;
+    margin-left: 10%;
+    padding-top: 20px;
+}

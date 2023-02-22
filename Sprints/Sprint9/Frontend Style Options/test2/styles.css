@@ -1,0 +1,71 @@
+/*
+Styles for the web page, mostly concerning text styling
+and sizing for the minimal elements we have
+
+Last edited by
+Name: Nick Velicer
+Date: mid Octoberish
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Finger Paint");
+.title {
+    font-family: Finger Paint;
+    color: black;
+    margin-left: 10%;
+    margin-top: 4%;
+    font-size: 70px;
+}
+
+.subtitle {
+    font-family: Finger Paint;
+    display: inline;
+    margin-left: 10%;
+    color: black;
+}
+
+h1 {
+    font-family: Finger Paint;
+    text-align: left;
+    margin-bottom: 5px;
+    color: black;
+}
+
+h2 {
+    color: black;
+    text-align: left;
+    font-family: sans-serif;
+    padding-left: 18px;
+    font-size: 20.5px;
+    margin-bottom: -10px;
+}
+
+h3 {
+    color: black;
+    text-align: left;
+    font-size: 20.5px;
+    padding-left: 18px;
+    font-family: sans-serif;
+}
+
+#columns {
+    display: inline-block;
+}
+
+body {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/008/360/583/large_2x/canvas-texture-background-photo.jpg");
+}
+
+td {
+    color: black;
+    text-align: left;
+}
+
+#dataChoose {
+    margin-top: 50px;
+}
+
+#column1 {
+    float: left;
+    margin-left: 10%;
+    padding-top: 20px;
+}

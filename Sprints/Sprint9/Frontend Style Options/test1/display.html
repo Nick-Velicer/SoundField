@@ -1,0 +1,41 @@
+<!--  
+The main web page for our application, currently just
+displaying the two pre-rendered videos of our data
+and not really doing much aside from looking alright
+
+Last edited by
+Name: Nick Velicer
+Date: mid Octoberish
+
+-->
+
+<!DOCTYPE html>
+<html>
+    <script src="page_functionality.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <body>
+        <h1 class="title">SoundField</h1>
+        <h2 class="subtitle">Creating art from the active brain.</h2>
+        <h2 style="margin-left:9%">_____________________________________</h2>
+        <div id="columns" style="width: 100%">
+            <div id="column1">
+                <h1 style="margin-bottom: 20px">Our Data:</h1>
+                <video autoplay muted loop width="600">
+                    <source src="Videos/EEGBaseAnimation.mp4" type="video/mp4">
+                </video>
+                <h1>Our Team:</h1>
+                <h2>Anna Burns</h2>
+                <h2>Davis Johnson</h2>
+                <h2>Zach Misic</h2>
+                <h2>Michael Perry</h2>
+                <h2>Nick Velicer</h2>
+            </div>
+            <div id="column2" style="float: right; margin-right: 10%">
+                <h1 style="margin-top: -2px">Our Art:</h1>
+                <video autoplay loop muted width="480" height="480">
+                    <source src="Videos/harmonograph.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </body>
+</html>
