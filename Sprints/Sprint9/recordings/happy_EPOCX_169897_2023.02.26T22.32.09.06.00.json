@@ -1,0 +1,35 @@
+{
+    "Markers": [
+    ],
+    "connectionType": "dongle",
+    "demographics": {
+        "birthday": "2001-01-01",
+        "countryOfInfluence": {
+            "iso": "",
+            "printable": ""
+        },
+        "countryOfResidence": {
+            "iso": "US",
+            "printable": "United States of America"
+        },
+        "education": "Bachelor's degree",
+        "gender": "M",
+        "handedness": "Right",
+        "languageAbility": "Native Language Only",
+        "meditation": {
+            "answer": false,
+            "duration_frequency": "",
+            "duration_minute": "",
+            "length": "",
+            "length_unit": ""
+        },
+        "musicalAbility": "None",
+        "profession": "Computer and mathematical"
+    },
+    "exportApp": "com.emotiv.emotivpro",
+    "exportTime": "2023-02-27T12:51:06.045-06:00",
+    "headsetType": "EPOCX",
+    "mappings": null,
+    "recordId": "7e10a26e-1aa5-4263-8cbd-54e000594958",
+    "user": "zachmisic"
+}
