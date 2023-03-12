@@ -12,7 +12,12 @@ from django.urls import path
 from api import views
 
 urlpatterns = [
+    path('upload/', views.UploadFileView.as_view(), name='upload-file')
+]
+'''
+urlpatterns = [
     path('', views.DataPointList),
     path('<int:pk>/', views.DataPointDetail),
     path('upload/', views.UploadFileView.as_view(), name='upload-file')
 ]
+'''

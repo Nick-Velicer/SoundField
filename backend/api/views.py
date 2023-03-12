@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-@api_view(['GET', 'POST'])
+@api_view(['GET'])
 def DataPointList(request):
     """
     List all data points or create a new one
@@ -81,10 +81,9 @@ def DataPointDetail(request, pk):
         point.delete()
         return HttpResponse(status=204)
 
-
 class UploadFileView(generics.CreateAPIView):
     serializer_class = FileUploadSerializer
-
+    
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
