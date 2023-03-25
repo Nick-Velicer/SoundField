@@ -3,10 +3,10 @@ import {useState} from 'react';
 //import { useForm } from "react-hook-form";
 
 //This is the main front end file, which renders
-//our current page as well as a dummy backend
-//call to make sure the services can talk to each other
+//our current page as well as any API calls to pass
+//csv data around
 
-//Last edited by Nick Velicer, Feb 11
+//Last edited by Nick Velicer, March 22
 
 export async function getCSV() {
 
@@ -23,46 +23,33 @@ export async function getCSV() {
 //https://www.pluralsight.com/guides/uploading-files-with-reactjs
 
 function TakeCSVForm() {
+  //handlers for showing and uploading the file
   const [selectedFile, setSelectedFile] = useState();
   const [isFilePicked, setIsFilePicked] = useState(false);
-
 	const changeHandler = (event) => {
 		setSelectedFile(event.target.files[0]);
 		setIsFilePicked(true);
 	};
 
-  const handleSubmission = async (data) => {
+  const handleSubmission = (event) => {
+    event.preventDefault();
     const formData = new FormData();
-    formData.append("file", selectedFile);
-
-    const res = await fetch("http://localhost:8000/api/v2/upload/", {
-        method: "POST",
-        body: formData,
-    }).then((res) => res.json());
-    alert(JSON.stringify(`${res.message}, status: ${res.status}`));
+    formData.append('file', selectedFile);
+    fetch("http://localhost:8000/api/v2/upload/", {
+      method: 'POST',
+      body: formData,
+    })
+    .then(response => response.blob())
+    .then(blob => {
+      //processing the returned response and extracting the file
+      const url = window.URL.createObjectURL(new Blob([blob]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'output.csv');
+      document.body.appendChild(link);
+      link.click();
+    });
   };
-  /*
-	const handleSubmission = () => {
-		const formData = new FormData();
-    console.log("in handleSubmission");
-		formData.append('File', selectedFile);
-		fetch(
-			'http://localhost:8000/api/v2/upload/',
-			{
-				method: 'POST',
-				body: formData,
-			}
-		)
-			.then((response) => response.json())
-			.then((result) => {
-				console.log('Success:', result);
-			})
-			.catch((error) => {
-				console.error('Error:', error);
-			});
-    
-	};
-  */
   return(
     <div>
       <form encType="multipart/form-data" onSubmit={(event) => event.preventDefault()}>
@@ -82,7 +69,6 @@ function TakeCSVForm() {
 			) : (
 				<p>Select a file to show details</p>
 			)}
-      
     </div>
    )
 }  

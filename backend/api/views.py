@@ -9,6 +9,7 @@ from api.models import DataPoint, EEGData, Session
 from api.serializers import DataPointSerializer
 from api.serializers import FileUploadSerializer, SaveFileSerializer
 import io, csv, pandas as pd
+from django.core.files.storage import default_storage
 
 import logging
 logging.basicConfig(level=logging.INFO)
@@ -85,20 +86,20 @@ class UploadFileView(generics.CreateAPIView):
     serializer_class = FileUploadSerializer
     
     def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        file = serializer.validated_data['file']
-        reader = pd.read_csv(file)
-
+        file = request.FILES['file']
+        session_df = pd.read_csv(file)
         # session = Session(sampling_rate=128)
         # session.save()
         # logger.log("New Session ID: " + str(session.id))
+        
+        
+        #do whatever cleanup/classifying needs to be done on the data here
+        #while it's in a pandas dataframe
 
-        count = 0
-        for idx, row in reader.iterrows():
-            logger.info(str(idx))
-            logger.info(str(row))
-            count += 1
-            if count > 20:
-                break
-        return Response({"status": "success"}, status.HTTP_201_CREATED)
+        #path = default_storage.save('/tempstorage', session_df.head().to_csv(path_or_buf=response, sep=',', index=False))
+        response = HttpResponse(
+        content_type='text/csv',
+        headers={'Content-Disposition': 'attachment; filename="processed_data.csv"'},
+        )
+        session_df.to_csv(path_or_buf=response, index=False)
+        return response
