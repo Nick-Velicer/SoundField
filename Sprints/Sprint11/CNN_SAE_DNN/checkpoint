@@ -1,0 +1,2 @@
+model_checkpoint_path: "DNNWeights.1.0"
+all_model_checkpoint_paths: "DNNWeights.1.0"
