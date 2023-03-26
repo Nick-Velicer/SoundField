@@ -10,6 +10,7 @@ from api.serializers import DataPointSerializer
 from api.serializers import FileUploadSerializer, SaveFileSerializer
 import io, csv, pandas as pd
 from django.core.files.storage import default_storage
+import time
 
 import logging
 logging.basicConfig(level=logging.INFO)
@@ -92,6 +93,7 @@ class UploadFileView(generics.CreateAPIView):
         # session.save()
         # logger.log("New Session ID: " + str(session.id))
         
+        time.sleep(3)
         
         #do whatever cleanup/classifying needs to be done on the data here
         #while it's in a pandas dataframe

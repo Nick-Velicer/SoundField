@@ -1,6 +1,7 @@
 import './App.css';
 import {useState} from 'react';
-//import { useForm } from "react-hook-form";
+//import {useEffect} from 'react';
+import { Button, CircularProgress } from '@material-ui/core';
 
 //This is the main front end file, which renders
 //our current page as well as any API calls to pass
@@ -8,31 +9,24 @@ import {useState} from 'react';
 
 //Last edited by Nick Velicer, March 22
 
-export async function getCSV() {
-
-  try{
-      const response = await fetch("http://localhost:8000/api/processedCSV");
-      return await response.json();
-  }catch(error) {
-      return [];
-  }
-  
-}
 
 //the following is temp tutorial code from
 //https://www.pluralsight.com/guides/uploading-files-with-reactjs
+
 
 function TakeCSVForm() {
   //handlers for showing and uploading the file
   const [selectedFile, setSelectedFile] = useState();
   const [isFilePicked, setIsFilePicked] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
 	const changeHandler = (event) => {
 		setSelectedFile(event.target.files[0]);
 		setIsFilePicked(true);
 	};
 
   const handleSubmission = (event) => {
-    event.preventDefault();
+    setIsLoading(true);
     const formData = new FormData();
     formData.append('file', selectedFile);
     fetch("http://localhost:8000/api/v2/upload/", {
@@ -48,13 +42,19 @@ function TakeCSVForm() {
       link.setAttribute('download', 'output.csv');
       document.body.appendChild(link);
       link.click();
+      setIsLoading(false);
     });
   };
   return(
     <div>
       <form encType="multipart/form-data" onSubmit={(event) => event.preventDefault()}>
       	<input type="file" name="file" onChange={changeHandler} />
-	   		<button type= "submit" onClick={handleSubmission}>Submit</button>
+        {!isLoading ? (
+          <Button variant="contained" color="default" onClick={handleSubmission} disabled={isLoading}>Submit</Button>
+
+        ) : (
+         <CircularProgress/>
+        )}
 	    </form>
         {isFilePicked ? (
 				<div>
@@ -73,22 +73,8 @@ function TakeCSVForm() {
    )
 }  
 
-//old front end
 function App() {
-  
-  /*const [holder, setData] = useState([]);
 
-  useEffect(() => {
-    getData()
-  }, [])
-
-  const getData = async() => {
-    const response = await fetch("http://localhost:8000/api/v2/");
-    setData(await response.json());
-  }*/
-  
-
-  //Main return statement for the actual html
   return (
     <div id="root">
       <h1 className="title">SoundField</h1>
