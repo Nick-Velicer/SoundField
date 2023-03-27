@@ -1,6 +1,6 @@
 const electron = require('electron');
 const { app, BrowserWindow } = electron;
-const path = require('path');
+//const path = require('path');
 const isDev = require('electron-is-dev');
 
 let mainWindow = null;
@@ -15,6 +15,19 @@ app.on('activate', function () {
     createWindow()
   }
 });
+
+/*
+const { ipcMain } = require("electron");
+const exec = require('child_process').exec;
+
+ipcMain.on("runScript", (event, data) => {
+   exec("node script.js", (error, stdout, stderr) => { 
+        console.log(stdout);
+    });
+    //pipe stuff here
+});
+*/
+
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1024,

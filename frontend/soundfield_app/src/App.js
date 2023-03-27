@@ -3,6 +3,9 @@ import {useState} from 'react';
 //import {useEffect} from 'react';
 import { Button, CircularProgress } from '@material-ui/core';
 
+//import 'child_process';
+//import 'electron';
+
 //This is the main front end file, which renders
 //our current page as well as any API calls to pass
 //csv data around
@@ -19,6 +22,7 @@ function TakeCSVForm() {
   const [selectedFile, setSelectedFile] = useState();
   const [isFilePicked, setIsFilePicked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  //const { ipcRenderer } = require("electron");
 
 	const changeHandler = (event) => {
 		setSelectedFile(event.target.files[0]);
@@ -43,6 +47,7 @@ function TakeCSVForm() {
       document.body.appendChild(link);
       link.click();
       setIsLoading(false);
+      //ipcRenderer.send("runScript");
     });
   };
   return(
