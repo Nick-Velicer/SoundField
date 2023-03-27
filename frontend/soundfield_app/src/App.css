@@ -1,5 +1,11 @@
 
-@import url("https://fonts.googleapis.com/css?family=Roboto Mono");
+
+@font-face {
+    font-family: "Tajawal";
+    src: local("Tajawal"),
+     url("./Fonts/Tajawal-ExtraLight.ttf") format("truetype");
+}
+
 .title {
     margin-left: 10%;
     margin-top: 4%;
@@ -13,7 +19,7 @@
 
 h1 {
     color: white;
-    font-family: Roboto Mono;
+    font-family: "Tajawal";
     text-align: left;
     margin-bottom: 5px;
 }

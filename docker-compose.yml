@@ -19,9 +19,3 @@ services:
       - 5432:5432
     volumes: 
       - ./db:/var/lib/postgresql/data
-  frontend:
-    build: ./frontend/soundfield_app
-    ports:
-      - "3000:3000"
-    stdin_open: true
-    tty: true
