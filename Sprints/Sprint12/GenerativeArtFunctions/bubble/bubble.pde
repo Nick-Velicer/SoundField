@@ -14,7 +14,7 @@ void setup() {
 void draw() {
   background(0);
   bubble(300, 300);
-  noLoop();
+  //noLoop();
 }
 
 void bubble(int x, int y) {
@@ -28,5 +28,12 @@ void bubble(int x, int y) {
       float size = random(-pow(24 - fr, 1.1)*sw, pow(24 - fr, 1.1)*sw);
       circle(x + x_noise, y + y_noise, size);
     }
+    
+    // Save frame
+    
+    // Increment frame num
   }
+  
+  // Only for testing purposes
+  delay(1000);
 }

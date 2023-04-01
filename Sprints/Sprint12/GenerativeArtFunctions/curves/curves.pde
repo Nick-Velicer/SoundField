@@ -10,21 +10,12 @@ void setup() {
 }
 
 void draw() {
-  //background(0);
+  background(0);
   curveFunc(300, 300);
   //noLoop();
 }
 
 void curveFunc(int x, int y) {
-  background(0);
-  
-  //noFill();
-  //stroke(255, 102, 0);
-  //line(120, 80, 320, 20);
-  //line(320, 300, 120, 300);
-  //stroke(0, 0, 0);
-  //bezier(120, 80,  320, 20,  320, 300,  120, 300);
-  
   int dis = int(random(1, 5));
   int xoff = int(random(20, 50));
   int strength_center = int(random(10, 100));
@@ -57,12 +48,15 @@ void curveFunc(int x, int y) {
     int y_4 = strength_edge + ((h - strength_edge) * up);
     
     noFill();
-    stroke(0, 0, 360, 360);
-    strokeWeight(1);
-    //line(x_1, y_1, x_2, y_2);
-    //line(x_3, y_3, x_4, y_4);
     stroke(hue, 300, 360, 100);
     bezier(x_1, y_1, x_2, y_2, x_4, y_4, x_3, y_3);
+    
+    // Save frame
+    
+    // Increment frame num
+    
   }
+  
+  // Only for testing purposes
   delay(1000);
 }

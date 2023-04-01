@@ -67,7 +67,10 @@ void triRays(int x, int y) {
       line(xc, yu, xc, yd);
     }
     
-    // Save frame here
+    // Save frame
+    
+    // Increment frame num
+    
   }
   
   // Only for testing purposes
