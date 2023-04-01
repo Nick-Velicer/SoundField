@@ -42,7 +42,7 @@ void perlinLoop(int x, int y) {
     beginShape();
     // Iterate through all angles in the circle
     for (float a = 0; a < TWO_PI; a+=0.01) {
-      // Get the x,y values for tranversing the 
+      // Get the x,y values for traversing the 
       // 2D noise field in a circle
       float xoff = map(cos(a), -1, 1, 0, noiseMax);
       float yoff = map(sin(a), -1, 1, 0, noiseMax);
