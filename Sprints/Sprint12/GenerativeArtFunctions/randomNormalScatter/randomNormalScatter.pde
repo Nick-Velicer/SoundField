@@ -18,12 +18,11 @@ void draw() {
 }
 
 void randomNormalScatter(int x, int y) {
-  print(int(random(0,5)));
-  
+  // Randomly choose color ranges
   int colorChoice = int(random(0,5));
   int colMin, colMax;
   
-  if (colorChoice == 0) { // red to yellow
+  if (colorChoice == 0) {        // red to yellow
     colMin = 0;
     colMax = 60;
   } else if (colorChoice == 1) { // blue to light blue
@@ -32,7 +31,7 @@ void randomNormalScatter(int x, int y) {
   } else if (colorChoice == 2) { // purple to pink
     colMin = 270;
     colMax = 300;
-  } else { // green to turquoise
+  } else {                       // green to turquoise
     colMin = 120;
     colMax = 175;
   }
