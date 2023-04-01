@@ -13,7 +13,7 @@ void setup() {
 
 void draw() {
   background(0);
-  worleyLoop(300, 300);
+  worleyLoop(x_center, y_center);
   //noLoop();
 }
 

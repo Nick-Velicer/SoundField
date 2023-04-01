@@ -13,7 +13,7 @@ class Particle {
     this.acc.mult(0);
   }
   
-  void follow(PVector[] vectors) {=
+  void follow(PVector[] vectors) {
     int x = floor(this.pos.x / scl);
     int y = floor(this.pos.y / scl);
     int index = x + y * cols;
