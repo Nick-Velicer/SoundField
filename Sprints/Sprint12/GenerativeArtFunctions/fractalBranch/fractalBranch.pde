@@ -35,6 +35,7 @@ void initBranch(int x, int y){
   //setup
   int radius = 51;
   float current_angle = 0;
+  colorMode(RGB,255);
   
   //generate
   pushMatrix();
