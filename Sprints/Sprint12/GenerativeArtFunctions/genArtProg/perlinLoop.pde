@@ -40,6 +40,7 @@ void perlinLoop(float x, float y) {
     // Close shape
     endShape(CLOSE);
     
+    println("Frame:", fr);
     if (save) {
       // Save frame
       save(str(frame) + ".png");

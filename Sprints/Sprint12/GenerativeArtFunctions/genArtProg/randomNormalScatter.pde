@@ -30,6 +30,7 @@ void randomNormalScatter(float x, float y) {
       point(xc, yc);
     }
     
+    println("Frame:", fr);
     if (save) {
       // Save frame
       save(str(frame) + ".png");

@@ -17,24 +17,23 @@ void curveFunc(float x, float y) {
   
   for (int fr = 0; fr < 24; fr++) {
     if (fr % 2 == 0) {
-      continue;
+      float x_1 = x;
+      float y_1 = y;
+      float x_2 = x_1 + strength_center * right;
+      float y_2 = y_1;
+  
+      float x_3 = x + ((xoff + (dis * fr)) * right);
+      float y_3 = 0 + (h * up);
+      float x_4 = x_3;
+      float y_4 = strength_edge + ((h - strength_edge) * up);
+      
+      noFill();
+      stroke(hue, 300, 360, 100);
+      strokeWeight(1);
+      bezier(x_1, y_1, x_2, y_2, x_4, y_4, x_3, y_3);
     }
     
-    float x_1 = x;
-    float y_1 = y;
-    float x_2 = x_1 + strength_center * right;
-    float y_2 = y_1;
-
-    float x_3 = x + ((xoff + (dis * fr)) * right);
-    float y_3 = 0 + (h * up);
-    float x_4 = x_3;
-    float y_4 = strength_edge + ((h - strength_edge) * up);
-    
-    noFill();
-    stroke(hue, 300, 360, 100);
-    strokeWeight(1);
-    bezier(x_1, y_1, x_2, y_2, x_4, y_4, x_3, y_3);
-    
+    println("Frame:", fr);
     if (save) {
       // Save frame
       save(str(frame) + ".png");

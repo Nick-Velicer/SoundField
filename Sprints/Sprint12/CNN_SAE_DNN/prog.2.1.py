@@ -241,5 +241,9 @@ out = DNN_model.predict(SAE_out)
 #---------- Argmax and Save Predictions ----------#
 
 predictions = np.argmax(out, axis=1)
-print(predictions)
-pd.DataFrame(predictions).to_csv("output.csv", index=False, header=False)
+valence = np.random.random(predictions.shape[0])
+arousal = np.random.random(predictions.shape[0])
+df = pd.DataFrame(valence)
+df["a"] = arousal
+df["p"] = predictions
+df.to_csv("output.csv", index=False, header=False)

@@ -20,11 +20,12 @@ void draw() {
   strokeWeight(2);
   
   int seconds = 271;
+  float xstep = 1920.0/seconds;
   int count = 0;
   
-  for (float s = 0; s < 1920; s+= 1920.0/seconds) {
-    float x = s;
-    float y = (1.0/2560.0)*s*s - (3.0/4.0)*s + 720.0;
+  for (float s = 0; s < seconds; s+=1) {
+    float x = s * xstep;
+    float y = (1.0/2560.0)*x*x - (3.0/4.0)*x + 720.0;
     
     point(x,y);
     
@@ -46,6 +47,8 @@ void draw() {
       triRays(x,y);
     } else if (randFunc == 7) {
       worleyLoop(x,y);
+    } else if (randFunc == 8) {
+      magnetSim(x,y);
     }
     
     //delay(500);

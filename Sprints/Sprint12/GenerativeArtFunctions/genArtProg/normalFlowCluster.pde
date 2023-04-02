@@ -52,6 +52,7 @@ void normalFlowCluster(float x, float y) {
       }
     }
     
+    println("Frame:", fr);
     if (save) {
       // Save frame
       save(str(frame) + ".png");

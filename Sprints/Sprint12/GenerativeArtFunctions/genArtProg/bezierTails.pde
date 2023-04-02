@@ -35,7 +35,8 @@ void bezierTails(float x, float y) {
     strokeWeight(2);
     bezier(csx, csy, cex, cey, oex, oey, osx, osy);
     
-    if (save) {
+    println("Frame:", fr);
+    if (save) { 
       // Save frame
       save("frames" + str(frame) + ".png");
       // Increment frame num

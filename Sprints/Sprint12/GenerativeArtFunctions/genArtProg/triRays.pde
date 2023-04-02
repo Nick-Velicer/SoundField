@@ -52,6 +52,7 @@ void triRays(float x, float y) {
       line(xc, yu, xc, yd);
     }
     
+    println("Frame:", fr);
     if (save) {
       // Save frame
       save(str(frame) + ".png");
