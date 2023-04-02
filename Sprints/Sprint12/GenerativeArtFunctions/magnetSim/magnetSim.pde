@@ -40,7 +40,7 @@ void magnetSim(int x, int y){
       for (int j=0;j<n;j++){
         int score = abs(i-12) + abs(j-12);
         forces[i][j] = 2*(noise(i,j)-.5);
-        if(score < random(0,threshold)){
+        if(score < threshold){
           shown[i][j] = true;
         }else{
           shown[i][j] = false;
