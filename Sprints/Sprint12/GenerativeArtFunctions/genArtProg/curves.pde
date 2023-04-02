@@ -37,7 +37,7 @@ void curveFunc(float x, float y) {
     //println("Frame:", fr);
     if (save) {
       // Save frame
-      save(str(frame) + ".png");
+      save("frames/" + str(frame) + ".png");
       // Increment frame num
       frame++;
     }

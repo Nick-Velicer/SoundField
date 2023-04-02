@@ -60,7 +60,15 @@ void magnetSim(float x, float y){
         popMatrix();
       }
     }
-  
+    
+    if ((itr + 1) % 5 == 0) {
+      if (save) {
+        // Save frame
+        save("frames/" + str(frame) + ".png");
+        // Increment frame num
+        frame++;
+      }
+    }
   }
   popMatrix();
 }

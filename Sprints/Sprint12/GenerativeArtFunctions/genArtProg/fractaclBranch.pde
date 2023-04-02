@@ -1,11 +1,3 @@
-int x=300;
-int y=300;
-
-void setup(){
-  size(600,600);
-  frameRate(1);
-}
-
 void branch(float rad, color c){
   //params
   float decay = .84;
@@ -31,7 +23,7 @@ void branch(float rad, color c){
 }
 
 
-void initBranch(int x, int y){
+void initBranch(float x, float y){
   //setup
   int radius = 40;
   float current_angle = 0;
@@ -53,13 +45,18 @@ void initBranch(int x, int y){
       pop();
     }
     current_angle += TWO_PI/12;
+    
+    if (save) {
+      // Save 2 frames per step becuase it iterates 12 times for 24 frames
+      // Save frame
+      save("frames/" + str(frame) + ".png");
+      // Increment frame num
+      frame++;
+      // Save frame
+      save("frames/" + str(frame) + ".png");
+      // Increment frame num
+      frame++;
+    }
   }
   popMatrix();
-}
-
-
-
-void draw(){
-  background(0);
-  initBranch(x,y);
 }

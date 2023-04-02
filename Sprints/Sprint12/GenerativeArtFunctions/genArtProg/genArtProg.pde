@@ -44,31 +44,35 @@ void draw() {
     float ang = v.heading();
     float mag = v.mag();
     
-    int randFunc = int(random(0,9));
+    float angStep = TWO_PI / 10.0;
     
-    if (randFunc == 0) {
+    int randFunc = int(random(0,10));
+    
+    if (ang < -PI + angStep*1) {
       bezierTails(x,y);
-    } else if (randFunc == 1) {
+    } else if (ang < -PI + angStep*2) {
       bubble(x,y);
-    } else if (randFunc == 2) {
+    } else if (ang < -PI + angStep*3) {
       curveFunc(x,y);
-    } else if (randFunc == 3) {
+    } else if (ang < -PI + angStep*4) {
       normalFlowCluster(x,y);
-    } else if (randFunc == 4) {
+    } else if (ang < -PI + angStep*5) {
       perlinLoop(x,y);
-    } else if (randFunc == 5) {
+    } else if (ang < -PI + angStep*6) {
       randomNormalScatter(x,y);
-    } else if (randFunc == 6) {
+    } else if (ang < -PI + angStep*7) {
       triRays(x,y);
-    } else if (randFunc == 7) {
+    } else if (ang < -PI + angStep*8) {
       worleyLoop(x,y);
-    } else if (randFunc == 8) {
+    } else if (ang < -PI + angStep*9) {
       magnetSim(x,y);
+    } else if (ang < -PI + angStep*10) {
+      initBranch(x,y);
     }
     
     //delay(500);
     println(count);
-    println(valence-0.5, arousal-0.5, pnn, ang, mag);
+    //println(valence-0.5, arousal-0.5, pnn, ang, mag);
     count++;
   }
   
