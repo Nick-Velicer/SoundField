@@ -4,13 +4,18 @@ int h = 1080;
 int frame = 0;
 boolean save = false;
 
+Table table;
+
 void settings() {
   size(w, h);
 }
 
 void setup() {
   colorMode(HSB, 360);
-  frameRate(24);
+  
+  table = loadTable("output.csv", "csv");
+  println(table.getRowCount() + " total rows in table");
+  println("There are " + table.getColumnCount() + " columns in the table");
 }
 
 void draw() {
@@ -19,7 +24,7 @@ void draw() {
   stroke(0,0,360,360);
   strokeWeight(2);
   
-  int seconds = 271;
+  int seconds = table.getRowCount();
   float xstep = 1920.0/seconds;
   int count = 0;
   
@@ -28,6 +33,16 @@ void draw() {
     float y = (1.0/2560.0)*x*x - (3.0/4.0)*x + 720.0;
     
     point(x,y);
+    
+    TableRow row = table.getRow(int(s));
+    
+    float valence = row.getFloat(0);
+    float arousal = row.getFloat(1);
+    int pnn = row.getInt(2);
+    
+    PVector v = new PVector(valence-0.5, arousal-0.5);
+    float ang = v.heading();
+    float mag = v.mag();
     
     int randFunc = int(random(0,9));
     
@@ -53,6 +68,7 @@ void draw() {
     
     //delay(500);
     println(count);
+    println(valence-0.5, arousal-0.5, pnn, ang, mag);
     count++;
   }
   

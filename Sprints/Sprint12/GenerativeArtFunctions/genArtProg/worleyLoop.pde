@@ -1,4 +1,5 @@
 void worleyLoop(float x, float y) {
+  colorMode(HSB, 360);
   // Set the size of the Worley noise space
   int worleySize = 100;
   // Set the number of points in the Worley noise space
@@ -52,7 +53,7 @@ void worleyLoop(float x, float y) {
     // Close shape
     endShape(CLOSE);
     
-    println("Frame:", fr);
+    //println("Frame:", fr);
     if (save) {
       // Save frame
       save(str(frame) + ".png");

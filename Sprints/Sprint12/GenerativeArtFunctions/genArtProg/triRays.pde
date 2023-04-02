@@ -1,4 +1,5 @@
 void triRays(float x, float y) {  
+  colorMode(HSB, 360);
   // Randomly choose the number of ray sets 3-5
   int sets = round(random(2.5, 5.5));
   // Initialize 2D array to put the properties of each set in
@@ -52,7 +53,7 @@ void triRays(float x, float y) {
       line(xc, yu, xc, yd);
     }
     
-    println("Frame:", fr);
+    //println("Frame:", fr);
     if (save) {
       // Save frame
       save(str(frame) + ".png");

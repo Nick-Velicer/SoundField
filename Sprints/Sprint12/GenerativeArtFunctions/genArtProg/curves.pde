@@ -1,4 +1,5 @@
 void curveFunc(float x, float y) {
+  colorMode(HSB, 360);
   int dis = int(random(1, 5));
   int xoff = int(random(20, 50));
   int strength_center = int(random(10, 100));
@@ -33,7 +34,7 @@ void curveFunc(float x, float y) {
       bezier(x_1, y_1, x_2, y_2, x_4, y_4, x_3, y_3);
     }
     
-    println("Frame:", fr);
+    //println("Frame:", fr);
     if (save) {
       // Save frame
       save(str(frame) + ".png");

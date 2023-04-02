@@ -1,4 +1,5 @@
 void bubble(float x, float y) {
+  colorMode(HSB, 360);
   int nw = 1;
   int sw = 4;
   // Each frame in the function
@@ -12,7 +13,7 @@ void bubble(float x, float y) {
       circle(x + x_noise, y + y_noise, size);
     }
     
-    println("Frame:", fr);
+    //println("Frame:", fr);
     if (save) {
       // Save frame
       save(str(frame) + ".png");

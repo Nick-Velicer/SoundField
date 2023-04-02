@@ -1,4 +1,5 @@
 void bezierTails(float x, float y) {
+  colorMode(HSB, 360);
   
   // Initialize the center and outer strength of the curve
   float cStr = random(20,100);
@@ -35,7 +36,7 @@ void bezierTails(float x, float y) {
     strokeWeight(2);
     bezier(csx, csy, cex, cey, oex, oey, osx, osy);
     
-    println("Frame:", fr);
+    //println("Frame:", fr);
     if (save) { 
       // Save frame
       save("frames" + str(frame) + ".png");

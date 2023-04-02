@@ -9,7 +9,7 @@ void magnetSim(float x, float y){
   float b_r = random(0,255);
   float b_g = random(0,255);
   float b_b = random(0,255);
-  int threshold = 18;
+  int threshold = 8;
   strokeWeight(4);
   for (int i=0;i<25;i++){
     for (int j=0;j<25;j++){
@@ -39,11 +39,12 @@ void magnetSim(float x, float y){
       for (int j=0;j<25;j++){
         pushMatrix();
         translate(10*2*i,10*2*j);
+        int score = abs(i-12) + abs(j-12);
         
         if(shown[i][j]){
           rotate(magnets[i][j]);
           strokeWeight(2*2);
-          stroke(b_r*(abs(magnets[i][j]) % 3.14),b_g*(abs(magnets[i][j]) % 3.14),b_b*(abs(magnets[i][j]) % 3.14),255);
+          stroke(b_r*(abs(magnets[i][j]) % 3.14),b_g*(abs(magnets[i][j]) % 3.14),b_b*(abs(magnets[i][j]) % 3.14),255-score*31);
           line(10*2,0,0,0);
           if (abs(magnets[i][j]) % 3.14 < .2) {
             stroke(a);

@@ -1,4 +1,5 @@
 void perlinLoop(float x, float y) {
+  colorMode(HSB, 360);
   // Set random noise seed
   noiseSeed(int(random(MAX_INT)));
   
@@ -40,7 +41,7 @@ void perlinLoop(float x, float y) {
     // Close shape
     endShape(CLOSE);
     
-    println("Frame:", fr);
+    //println("Frame:", fr);
     if (save) {
       // Save frame
       save(str(frame) + ".png");

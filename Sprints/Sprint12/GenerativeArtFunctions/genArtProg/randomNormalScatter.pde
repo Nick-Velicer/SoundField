@@ -1,4 +1,5 @@
 void randomNormalScatter(float x, float y) {
+  colorMode(HSB, 360);
   // Randomly choose color ranges
   int colorChoice = int(random(0,5));
   int colMin, colMax;
@@ -30,7 +31,7 @@ void randomNormalScatter(float x, float y) {
       point(xc, yc);
     }
     
-    println("Frame:", fr);
+    //println("Frame:", fr);
     if (save) {
       // Save frame
       save(str(frame) + ".png");
