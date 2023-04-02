@@ -1,23 +1,4 @@
-int w = 600;
-int h = 600;
-int x_center = w / 2;
-int y_center = h / 2;
-
-void settings() {
-  size(w, h);
-}
-
-void setup() {
-  colorMode(HSB, 360);
-}
-
-void draw() {
-  background(0);
-  triRays(x_center, y_center);
-  //noLoop();
-}
-
-void triRays(int x, int y) {  
+void triRays(float x, float y) {  
   // Randomly choose the number of ray sets 3-5
   int sets = round(random(2.5, 5.5));
   // Initialize 2D array to put the properties of each set in
@@ -33,9 +14,9 @@ void triRays(int x, int y) {
     // Randomly choose the step size
     props[i][1] = random(2, 5);
     // Set the down angle
-    props[i][2] = random(PI/8, 3*PI/8);
+    props[i][2] = random(PI/8, 7*PI/16);
     // Set the up angle
-    props[i][3] = TWO_PI - random(PI/8, 3*PI/8);
+    props[i][3] = TWO_PI - random(PI/8, 7*PI/16);
     // Choose if it goes left or right
     if (random(1) > 0.5) { // Right
       // Set the flag
@@ -59,6 +40,8 @@ void triRays(int x, int y) {
       
       // Set color of set
       stroke(hue, 360, 360, 180);
+      // Set stroke weight
+      strokeWeight(1);
       
       // Calculate x, y coords for set at current frame
       float xc = x + fr * step * LRFlag;
@@ -69,12 +52,14 @@ void triRays(int x, int y) {
       line(xc, yu, xc, yd);
     }
     
-    // Save frame
-    
-    // Increment frame num
-    
+    if (save) {
+      // Save frame
+      save(str(frame) + ".png");
+      // Increment frame num
+      frame++;
+    }
   }
   
   // Only for testing purposes
-  delay(1000);
+  //delay(1000);
 }

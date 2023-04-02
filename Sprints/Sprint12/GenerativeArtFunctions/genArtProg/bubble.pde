@@ -1,23 +1,6 @@
-int w = 600;
-int h = 600;
-int nw = 1;
-int sw = 4;// 
-
-void settings() {
-  size(w, h);
-}
-
-void setup() {
-  colorMode(HSB, 360);
-}
-
-void draw() {
-  background(0);
-  bubble(300, 300);
-  //noLoop();
-}
-
-void bubble(int x, int y) {
+void bubble(float x, float y) {
+  int nw = 1;
+  int sw = 4;
   // Each frame in the function
   fill(random(0,360), 300, 360, 180);
   noStroke();
@@ -29,11 +12,14 @@ void bubble(int x, int y) {
       circle(x + x_noise, y + y_noise, size);
     }
     
-    // Save frame
-    
-    // Increment frame num
+    if (save) {
+      // Save frame
+      save(str(frame) + ".png");
+      // Increment frame num
+      frame++;
+    }
   }
   
   // Only for testing purposes
-  delay(1000);
+  //delay(1000);
 }
