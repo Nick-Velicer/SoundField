@@ -27,7 +27,7 @@ def FunctionReadInCsv(file_name):
     Columns = ['EEG.AF3', 'EEG.F7', 'EEG.F3', 'EEG.FC5', 'EEG.T7', 'EEG.P7', 'EEG.O1','EEG.O2', 'EEG.P8', 'EEG.T8', 'EEG.FC6', 'EEG.F4',  'EEG.F8' , 'EEG.AF4']
 
     data = data[Columns]
-    data = data.iloc[(HZ * 23):]
+    data = data.iloc[(HZ * 30):]
     # data['subject_num'] = 1
     # Convert to numpy 2D array
     df = data.to_numpy()

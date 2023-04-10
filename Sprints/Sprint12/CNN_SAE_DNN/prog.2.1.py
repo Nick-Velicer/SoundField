@@ -28,7 +28,7 @@ def butter_bandpass_filter(data, lowcut, highcut, fs, order=5):
 #---------- Load Session Recording ----------#
 
 # Set Path of Recording
-RECORDING_PATH = "../../../local/output.csv"
+RECORDING_PATH = "../../../TestData/Recordings/S2/NickVelicer_006_3272023_EPOCX_180417_2023.03.27T14.35.25.05.00.md.bp.csv"
 
 # Set Needed Columns and Recording Rate
 EEG_COLUMNS = ["EEG.AF3", "EEG.F7", "EEG.F3", "EEG.FC5", "EEG.T7", "EEG.P7", "EEG.O1", "EEG.O2", "EEG.P8", "EEG.T8", "EEG.FC6", "EEG.F4", "EEG.F8", "EEG.AF4"]
