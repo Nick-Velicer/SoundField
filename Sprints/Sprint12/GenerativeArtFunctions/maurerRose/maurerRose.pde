@@ -9,7 +9,7 @@ void setup(){
 void rose(int x, int y) {
   //setup
   float d = random(0,180);
-  float n = random(0,10);
+  float n = random(0,20);
   colorMode(HSB,360);
   color c1 = color(random(0,360),360,360);
   color c2 = color(random(0,360),360,360);
