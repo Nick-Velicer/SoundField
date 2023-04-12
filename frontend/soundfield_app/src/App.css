@@ -41,7 +41,7 @@ h3 {
     font-family: sans-serif;
 }
 
-#columns {
+.columns {
     display: inline-block;
 }
 
@@ -58,14 +58,14 @@ td {
     margin-top: 50px;
 }
 
-#column1 {
-    float: left;
-    margin-left: 10%;
-    padding-top: 20px;
-}
 
 li {
     color: white;
+    font-family: "Tajawal";
+}
+
+ul {
+    list-style-type: none;
 }
 
 p {
