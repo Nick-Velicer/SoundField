@@ -372,4 +372,4 @@ if __name__ == "__main__":
 
     csd_pred = CNN_SAE_DNN(filepath)
 
-    CombineAndSave(mrnn_pred, csd_pred)
+    CombineAndSave(mrnn_pred, csd_pred)s
