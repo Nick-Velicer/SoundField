@@ -29,7 +29,7 @@ void curveFunc(float x, float y) {
       float y_4 = strength_edge + ((h - strength_edge) * up);
       
       noFill();
-      stroke(hue, 300, 360, 100);
+      stroke(hue, 300, 360, 200);
       strokeWeight(1);
       bezier(x_1, y_1, x_2, y_2, x_4, y_4, x_3, y_3);
     }

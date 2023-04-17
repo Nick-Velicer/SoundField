@@ -28,9 +28,18 @@ void draw() {
   float xstep = 1920.0/seconds;
   int count = 0;
   
+  FloatList yvals = new FloatList();
+  float scl = 0.003;
+  noiseSeed(int(random(MAX_INT)));
+  for (float s = 0; s < seconds; s+=1) {
+     float x = s * xstep;
+     yvals.append(map(noise(x*scl), 0, 1, 250, 830));
+  }
+  
   for (float s = 0; s < seconds; s+=1) {
     float x = s * xstep;
-    float y = (1.0/2560.0)*x*x - (3.0/4.0)*x + 720.0;
+    //float y = (1.0/2560.0)*x*x - (3.0/4.0)*x + 720.0;
+    float y = yvals.get(int(s));
     
     point(x,y);
     
@@ -44,7 +53,7 @@ void draw() {
     float ang = v.heading();
     float mag = v.mag();
     
-    float angStep = TWO_PI / 10.0;
+    float angStep = TWO_PI / 12.0;
     
     int randFunc = int(random(0,10));
     
@@ -68,6 +77,10 @@ void draw() {
       magnetSim(x,y);
     } else if (ang < -PI + angStep*10) {
       initBranch(x,y);
+    } else if (ang < -PI + angStep*11) {
+      diamonds(x,y);
+    } else if (ang < -PI + angStep*12) {
+      rose(x,y);
     }
     
     //delay(500);
@@ -75,6 +88,6 @@ void draw() {
     //println(valence-0.5, arousal-0.5, pnn, ang, mag);
     count++;
   }
-  
+  //delay(500);
   noLoop();
 }

@@ -40,7 +40,7 @@ void triRays(float x, float y) {
       float LRFlag = props[i][4];
       
       // Set color of set
-      stroke(hue, 360, 360, 180);
+      stroke(hue, 360, 360, 300);
       // Set stroke weight
       strokeWeight(1);
       

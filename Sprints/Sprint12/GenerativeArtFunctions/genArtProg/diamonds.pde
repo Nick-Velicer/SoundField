@@ -1,20 +1,3 @@
-int w = 600;
-int h = 600;
-
-void settings() {
-  size(w, h);
-}
-
-void setup() {
-  colorMode(HSB, 360);
-}
-
-void draw() {
-  background(0);
-  diamonds(300, 300);
-  //noLoop();
-}
-
 void diamonds(float x, float y) {
   int nw = 1;
   int sw = 4;// 
