@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import UploadSection from './UploadSection';
 import AboutUs from './AboutUs';
+import RenderSection from "./RenderSection"
 import './App.css';
 
 function Navbar() {
@@ -13,31 +14,27 @@ function Navbar() {
   return (
     <nav>
       <div className="columns" style={{ width: "100%" }}>
-        <div style={{ float: "left" }}>
+        <div style={{marginLeft: "7%"}}>
           <ul>
-            <li className={activeTab === 'upload' ? 'active' : ''} onClick={() => handleTabClick('upload')}>
+            <li className={activeTab === 'upload' ? 'active' : ''} onClick={() => handleTabClick('upload')} style={{ display: "inline", marginRight: "110px"}}>
               Upload
             </li>
-            <li className={activeTab === 'about' ? 'active' : ''} onClick={() => handleTabClick('about')}>
+            <li className={activeTab === 'about' ? 'active' : ''} onClick={() => handleTabClick('about')} style={{ display: "inline", marginRight: "110px"}}>
               About Us
             </li>
-            <li className={activeTab === 'rendering' ? 'active' : ''} onClick={() => handleTabClick('rendering')}>
+            <li className={activeTab === 'rendering' ? 'active' : ''} onClick={() => handleTabClick('rendering')} style={{ display: "inline", marginRight: "110px"}}>
               Your Rendering
             </li>
           </ul>
         </div>
-        <div className="content" style={{ float: "right", marginRight: "30%" }}>
+        <div className="content">
           {activeTab === 'upload' && <UploadSection />}
           {activeTab === 'about' && <AboutUs />}
-          {activeTab === 'rendering' && <YourRenderingComponent />}
+          {activeTab === 'rendering' && <RenderSection />}
         </div>
       </div>
     </nav>
   );
-}
-
-function YourRenderingComponent() {
-  return <div>Your Rendering Component</div>;
-}
+  }
 
 export default Navbar;

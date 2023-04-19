@@ -8,9 +8,17 @@ cd local
 if exist "%file_name%" (
   echo File Found
   cd ..
+  cd frontend/soundfield_app
+  type nul rendering.txt
+  cd ..
+  cd ..
   cd Sprints\Sprint12\CNN_SAE_DNN
   python prog.2.1.py
   cd ..
+  cd ..
+  cd ..
+  cd frontend/soundfield_app
+  del rendering.txt
   cd ..
   cd ..
   cd local
