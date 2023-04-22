@@ -55,32 +55,43 @@ void draw() {
     
     float angStep = TWO_PI / 12.0;
     
-    int randFunc = int(random(0,10));
+    float[2] colorRange;
+    
+    if (pnn == 0) { // Negative
+      colorRange[0] = 250;
+      colorRange[1] = 360;
+    } else if (pnn == 1) { // Neutral
+      colorRange[0] = 140;
+      colorRange[1] = 250;
+    } else if (pnn == 2) { // Positive
+      colorRange[0] = 30;
+      colorRange[1] = 140; 
+    }
     
     if (ang < -PI + angStep*1) {
-      bezierTails(x,y);
-    } else if (ang < -PI + angStep*2) {
-      bubble(x,y);
-    } else if (ang < -PI + angStep*3) {
-      curveFunc(x,y);
-    } else if (ang < -PI + angStep*4) {
-      normalFlowCluster(x,y);
-    } else if (ang < -PI + angStep*5) {
-      perlinLoop(x,y);
-    } else if (ang < -PI + angStep*6) {
-      randomNormalScatter(x,y);
-    } else if (ang < -PI + angStep*7) {
-      triRays(x,y);
-    } else if (ang < -PI + angStep*8) {
-      worleyLoop(x,y);
-    } else if (ang < -PI + angStep*9) {
-      magnetSim(x,y);
-    } else if (ang < -PI + angStep*10) {
       initBranch(x,y);
+    } else if (ang < -PI + angStep*2) {
+      magnetSim(x,y);
+    } else if (ang < -PI + angStep*3) {
+      normalFlowCluster(x,y);
+    } else if (ang < -PI + angStep*4) {
+      worleyLoop(x,y);
+    } else if (ang < -PI + angStep*5) {
+      bezierTails(x,y);
+    } else if (ang < -PI + angStep*6) {
+      perlinLoop(x,y);
+    } else if (ang < -PI + angStep*7) {
+      curveFunc(x,y);
+    } else if (ang < -PI + angStep*8) {
+      triRays(x,y);
+    } else if (ang < -PI + angStep*9) {
+      bubble(x,y);
+    } else if (ang < -PI + angStep*10) {
+      rose(x,y);
     } else if (ang < -PI + angStep*11) {
       diamonds(x,y);
     } else if (ang < -PI + angStep*12) {
-      rose(x,y);
+      randomNormalScatter(x,y);
     }
     
     //delay(500);
