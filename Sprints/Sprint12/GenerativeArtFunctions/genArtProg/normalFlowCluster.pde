@@ -1,22 +1,22 @@
-void normalFlowCluster(float x, float y) {
+void normalFlowCluster(float x, float y, float hu) {
   colorMode(HSB, 360);
   // Randomly choose color ranges
-  int colorChoice = int(random(0,5));
-  int colMin, colMax;
+  //int colorChoice = int(random(0,5));
+  //int colMin, colMax;
   
-  if (colorChoice == 0) {        // red to yellow
-    colMin = 0;
-    colMax = 60;
-  } else if (colorChoice == 1) { // blue to light blue
-    colMin = 180;
-    colMax = 250;
-  } else if (colorChoice == 2) { // purple to pink
-    colMin = 270;
-    colMax = 300;
-  } else {                       // green to turquoise
-    colMin = 120;
-    colMax = 175;
-  }
+  //if (colorChoice == 0) {        // red to yellow
+  //  colMin = 0;
+  //  colMax = 60;
+  //} else if (colorChoice == 1) { // blue to light blue
+  //  colMin = 180;
+  //  colMax = 250;
+  //} else if (colorChoice == 2) { // purple to pink
+  //  colMin = 270;
+  //  colMax = 300;
+  //} else {                       // green to turquoise
+  //  colMin = 120;
+  //  colMax = 175;
+  //}
   
   // Set random noise seed
   noiseSeed(int(random(MAX_INT)));
@@ -44,7 +44,8 @@ void normalFlowCluster(float x, float y) {
         v.setMag(random(6,15));
         // Plot line
         push();
-        stroke(random(colMin, colMax), 360, 360, 240);
+        float hue = hu + randomGaussian() * 10;
+        stroke(hue, 360, 360, 240);
         translate(xc, yc);
         strokeWeight(2);
         point(0, 0);

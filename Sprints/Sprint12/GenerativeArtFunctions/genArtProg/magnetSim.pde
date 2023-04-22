@@ -1,12 +1,12 @@
-void magnetSim(float x, float y){
+void magnetSim(float x, float y, float hu){
   //setup
   colorMode(HSB,360);
   noiseSeed(int(random(MAX_INT)));
   float[][] magnets = new float[25][25];
   float[][] forces = new float[25][25];
   boolean[][] shown = new boolean[25][25];
-  color a = color(random(0,255),random(0,255),random(0,255));
-  color b = color(random(0,255),random(0,255),random(0,255));
+  color a = color(hu+randomGaussian()*10,random(0,255),random(0,255));
+  color b = color(hu,random(0,360),random(0,360));
   int threshold = 8;
   strokeWeight(4);
   for (int i=0;i<25;i++){

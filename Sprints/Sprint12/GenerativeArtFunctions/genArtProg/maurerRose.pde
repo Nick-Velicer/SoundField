@@ -1,13 +1,16 @@
-void rose(float x, float y) {
+void rose(float x, float y, float hu) {
   //setup
   float d = random(0,180);
   float n = random(0,20);
   colorMode(HSB,360);
-  color c1 = color(random(0,360),360,360);
-  color c2 = color(random(0,360),360,360);
+  float h1 = hu + randomGaussian() * 10;
+  float h2 = hu + randomGaussian() * 10;
+  color c1 = color(h1,360,360);
+  color c2 = color(h2,360,360);
   
   //generate
   pushMatrix();
+  push();
   translate(x,y);
   
   stroke(c1);
@@ -35,6 +38,6 @@ void rose(float x, float y) {
     vertex(x_local,y_local);    
   }
   endShape();
-  
+  pop();
   popMatrix();
 }

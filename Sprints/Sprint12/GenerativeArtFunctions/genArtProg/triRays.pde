@@ -1,17 +1,15 @@
-void triRays(float x, float y) {  
+void triRays(float x, float y, float hu) {  
   colorMode(HSB, 360);
   // Randomly choose the number of ray sets 3-5
   int sets = round(random(2.5, 5.5));
   // Initialize 2D array to put the properties of each set in
   float[][] props = new float[sets][];
-  // Initialize the start to hue range
-  float hueStart = random(0,270);
   // Loop to set the properties of each set
   for (int i = 0; i < sets; i++) {
     // Initialize the size of set properties
     props[i] = new float[5];
     // Randomly choose the hue of the set
-    props[i][0] = random(hueStart, hueStart + 90);
+    props[i][0] = hu + randomGaussian() * 10;
     // Randomly choose the step size
     props[i][1] = random(2, 5);
     // Set the down angle

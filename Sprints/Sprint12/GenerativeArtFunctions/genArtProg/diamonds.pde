@@ -1,8 +1,9 @@
-void diamonds(float x, float y) {
+void diamonds(float x, float y, float hu) {
   int nw = 1;
-  int sw = 4;// 
+  int sw = 4;
+  float hue = hu; 
   // Each frame in the function
-  fill(random(0,360), 300, 360, 180);
+  fill(hue, 300, 360, 180);
   noStroke();
   for (int fr = 0; fr < 24; fr++) {
     for (int i = 0; i < 5; i++) {
@@ -13,11 +14,14 @@ void diamonds(float x, float y) {
       quad(x+x_noise+horiz, y+y_noise, x+x_noise, y+y_noise+vert, x+x_noise-horiz, y+y_noise, x+x_noise, y+y_noise-vert);
     }
     
-    // Save frame
-    
-    // Increment frame num
+    if (save) {
+      // Save frame
+      save("frames/" + str(frame) + ".png");
+      // Increment frame num
+      frame++;
+    }
   }
   
   // Only for testing purposes
-  delay(1000);
+  //delay(1000);
 }

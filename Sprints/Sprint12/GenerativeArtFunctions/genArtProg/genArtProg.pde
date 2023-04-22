@@ -55,43 +55,50 @@ void draw() {
     
     float angStep = TWO_PI / 12.0;
     
-    float[2] colorRange;
+    float[] colorRange = new float[2];
+    float hue = 0.0;
     
     if (pnn == 0) { // Negative
-      colorRange[0] = 250;
-      colorRange[1] = 360;
+      colorRange[0] = 315;
+      colorRange[1] = 405;
+      hue = map(mag, 0.0, 0.707, 315, 405);
+      if (hue > 360) {
+        hue -= 360;
+      }
     } else if (pnn == 1) { // Neutral
-      colorRange[0] = 140;
-      colorRange[1] = 250;
+      colorRange[0] = 225;
+      colorRange[1] = 315;
+      hue = map(mag, 0.0, 0.707, 225, 315);
     } else if (pnn == 2) { // Positive
-      colorRange[0] = 30;
-      colorRange[1] = 140; 
+      colorRange[0] = 135;
+      colorRange[1] = 225; 
+      hue = map(mag, 0.0, 0.707, 135, 225);
     }
     
     if (ang < -PI + angStep*1) {
-      initBranch(x,y);
+      initBranch(x,y,hue);
     } else if (ang < -PI + angStep*2) {
-      magnetSim(x,y);
+      magnetSim(x,y,hue);
     } else if (ang < -PI + angStep*3) {
-      normalFlowCluster(x,y);
+      normalFlowCluster(x,y,hue);
     } else if (ang < -PI + angStep*4) {
-      worleyLoop(x,y);
+      worleyLoop(x,y,hue);
     } else if (ang < -PI + angStep*5) {
-      bezierTails(x,y);
+      bezierTails(x,y,hue);
     } else if (ang < -PI + angStep*6) {
-      perlinLoop(x,y);
+      perlinLoop(x,y,hue);
     } else if (ang < -PI + angStep*7) {
-      curveFunc(x,y);
+      curveFunc(x,y,hue);
     } else if (ang < -PI + angStep*8) {
-      triRays(x,y);
+      triRays(x,y,hue);
     } else if (ang < -PI + angStep*9) {
-      bubble(x,y);
+      bubble(x,y,hue);
     } else if (ang < -PI + angStep*10) {
-      rose(x,y);
+      rose(x,y,hue);
     } else if (ang < -PI + angStep*11) {
-      diamonds(x,y);
+      diamonds(x,y,hue);
     } else if (ang < -PI + angStep*12) {
-      randomNormalScatter(x,y);
+      randomNormalScatter(x,y,hue);
     }
     
     //delay(500);

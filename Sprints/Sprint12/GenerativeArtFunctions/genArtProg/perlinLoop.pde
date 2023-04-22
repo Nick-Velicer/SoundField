@@ -1,4 +1,4 @@
-void perlinLoop(float x, float y) {
+void perlinLoop(float x, float y, float hu) {
   colorMode(HSB, 360);
   // Set random noise seed
   noiseSeed(int(random(MAX_INT)));
@@ -6,7 +6,7 @@ void perlinLoop(float x, float y) {
   // Set perlin noise range
   float noiseMax = 2;
   // Randomly set the hue
-  float hue = random(0, 360);
+  float hue = hu;
   // Set the radius range
   int minR = 2;
   int maxR = 150;

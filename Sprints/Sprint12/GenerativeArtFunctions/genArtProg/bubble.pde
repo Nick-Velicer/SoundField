@@ -26,7 +26,7 @@
 //  //delay(1000);
 //}
 
-void bubble(float x, float y) {
+void bubble(float x, float y, float hu) {
   // Set the colormode
   colorMode(HSB, 360);
   // Randomly choose the number of arms
@@ -40,7 +40,7 @@ void bubble(float x, float y) {
     // Initialize the size of set properties
     props[i] = new float[2];
     // Randomly choose the hue of the set
-    props[i][0] = random(hueStart, hueStart + 90);
+    props[i][0] = hu + randomGaussian() * 5;
     // Set the angle
     props[i][1] = random(0, TWO_PI);
   }
@@ -94,5 +94,5 @@ void bubble(float x, float y) {
   }
   
   // Only for testing purposes
-  delay(1000);
+  //delay(1000);
 }

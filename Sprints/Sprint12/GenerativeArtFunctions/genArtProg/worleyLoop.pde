@@ -1,4 +1,4 @@
-void worleyLoop(float x, float y) {
+void worleyLoop(float x, float y, float hu) {
   colorMode(HSB, 360);
   // Set the size of the Worley noise space
   int worleySize = 100;
@@ -12,7 +12,7 @@ void worleyLoop(float x, float y) {
   }
   
   // Randomly set the hue
-  float hue = random(0, 360);
+  float hue = hu;
   // Set the radius range
   int minR = 10;
   int maxR = 140;

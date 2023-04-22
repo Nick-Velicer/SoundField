@@ -23,12 +23,13 @@ void branch(float rad, color c){
 }
 
 
-void initBranch(float x, float y){
+void initBranch(float x, float y, float hu){
   //setup
   int radius = 40;
   float current_angle = 0;
   colorMode(HSB,360);
-  color c = color(random(0,360),360,360);
+  float hue = hu;
+  color c = color(hue,360,360);
   
   //generate
   pushMatrix();

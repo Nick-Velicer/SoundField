@@ -1,10 +1,12 @@
-void curveFunc(float x, float y) {
+void curveFunc(float x, float y, float hu) {
+  push();
+  translate(0,0);
   colorMode(HSB, 360);
   int dis = int(random(1, 5));
   int xoff = int(random(20, 50));
   int strength_center = int(random(10, 100));
   int strength_edge = int(random(10, 100));
-  float hue = random(0, 360);
+  float hue = hu;
   
   int right = 1;
   if (random(1) > 0.5) {
@@ -42,6 +44,7 @@ void curveFunc(float x, float y) {
       frame++;
     }
   }
+  pop();
   
   // Only for testing purposes
   //delay(1000);

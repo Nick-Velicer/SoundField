@@ -1,4 +1,4 @@
-void bezierTails(float x, float y) {
+void bezierTails(float x, float y, float hu) {
   colorMode(HSB, 360);
   
   // Initialize the center and outer strength of the curve
@@ -15,9 +15,6 @@ void bezierTails(float x, float y) {
   float cAng = random(0,TWO_PI);
   float oAng = random(0,TWO_PI);
   
-  // Randomly select the hue
-  float hue = random(0,360);
-  
   // Iterate through all 24 frames
   for (int fr = 0; fr < 24; fr++) {
     // Set the center points
@@ -32,7 +29,7 @@ void bezierTails(float x, float y) {
     float oey = osy + (oStr + fr*oStrStep) * sin(oAng);
     // Plot the bezier curve
     noFill();
-    stroke(hue, 360-(fr*5), 360, 360);
+    stroke(hu, 360-(fr*5), 360, 360);
     strokeWeight(2);
     bezier(csx, csy, cex, cey, oex, oey, osx, osy);
     
