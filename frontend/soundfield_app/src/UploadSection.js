@@ -1,7 +1,7 @@
 import './App.css';
 import {useState} from 'react';
 //import {useEffect} from 'react';
-import { Button, CircularProgress } from '@material-ui/core';
+import { CircularProgress } from '@material-ui/core';
 
 //import 'child_process';
 //import 'electron';
@@ -55,7 +55,7 @@ function TakeCSVForm() {
       <form encType="multipart/form-data" onSubmit={(event) => event.preventDefault()}>
       	<input type="file" name="file" onChange={changeHandler} />
         {!isLoading ? (
-          <Button variant="contained" color="default" onClick={handleSubmission} disabled={isLoading}>Submit</Button>
+          <button onClick={handleSubmission} disabled={isLoading}>Submit</button>
 
         ) : (
          <CircularProgress/>
@@ -72,7 +72,7 @@ function TakeCSVForm() {
 					</p>
 				</div>
 			) : (
-				<p>Select a file to show details</p>
+				<p>Select a file to show details.</p>
 			)}
     </div>
    )
@@ -81,7 +81,8 @@ function TakeCSVForm() {
 function UploadSection() {
 
   return (
-    <div id="root" style={{ marginTop: "10%" }}>
+    <div id="root">
+      <p>Upload a session CSV here. Response files must be placed in Soundfield's "local" folder to see a render</p>
       <TakeCSVForm></TakeCSVForm>
     </div>
   );
