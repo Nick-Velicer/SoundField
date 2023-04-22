@@ -22,9 +22,17 @@ void rose(float x, float y, float hu) {
     float r = 150 * sin(n*k);
     float x_local = r * cos(k);
     float y_local = r * sin(k);
-    vertex(x_local,y_local);    
+    vertex(x_local,y_local);
   }
   endShape();
+  if (save) {
+    for (int i = 0; i < 12; i++) {
+      // Save frame
+      save("frames/" + str(frame) + ".png");
+      // Increment frame num
+      frame++;
+    }
+  }
 
   noFill();
   stroke(c2, 180);
@@ -38,6 +46,15 @@ void rose(float x, float y, float hu) {
     vertex(x_local,y_local);    
   }
   endShape();
+    if (save) {
+    for (int i = 0; i < 12; i++) {
+      // Save frame
+      save("frames/" + str(frame) + ".png");
+      // Increment frame num
+      frame++;
+    }
+  }
+  
   pop();
   popMatrix();
 }
