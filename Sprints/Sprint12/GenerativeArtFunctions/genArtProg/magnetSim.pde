@@ -1,14 +1,12 @@
 void magnetSim(float x, float y){
   //setup
-  colorMode(RGB,255);
+  colorMode(HSB,360);
   noiseSeed(int(random(MAX_INT)));
   float[][] magnets = new float[25][25];
   float[][] forces = new float[25][25];
   boolean[][] shown = new boolean[25][25];
   color a = color(random(0,255),random(0,255),random(0,255));
-  float b_r = random(0,255);
-  float b_g = random(0,255);
-  float b_b = random(0,255);
+  color b = color(random(0,255),random(0,255),random(0,255));
   int threshold = 8;
   strokeWeight(4);
   for (int i=0;i<25;i++){
@@ -44,7 +42,7 @@ void magnetSim(float x, float y){
         if(shown[i][j]){
           rotate(magnets[i][j]);
           strokeWeight(2*2);
-          stroke(b_r*(abs(magnets[i][j]) % 3.14),b_g*(abs(magnets[i][j]) % 3.14),b_b*(abs(magnets[i][j]) % 3.14),255-score*31);
+          stroke(hue(b)*(abs(magnets[i][j]) % 3.14),saturation(b)*(abs(magnets[i][j]) % 3.14),brightness(b)*(abs(magnets[i][j]) % 3.14),255-score*31);
           line(10*2,0,0,0);
           if (abs(magnets[i][j]) % 3.14 < .2) {
             stroke(a);
