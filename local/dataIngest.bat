@@ -6,20 +6,22 @@ call .venv\Scripts\activate.bat
 cd local
 :loop
 if exist "%file_name%" (
+  set "local_dir=%cd%"
   echo File Found
   cd ..
-  cd frontend/soundfield_app
-  type nul rendering.txt
+  set "processing_dir='%cd%\processing'"
+  cd Sprints\Sprint13\MLMODEL
+  copy "%local_dir%\output.csv" .
+  python prog.3.0.py
+  
+  cd ..
+  copy "MRNN\output.csv" %processing_dir%
   cd ..
   cd ..
-  cd Sprints\Sprint12\CNN_SAE_DNN
-  python prog.2.1.py
-  cd ..
-  cd ..
-  cd ..
-  cd frontend/soundfield_app
-  del rendering.txt
-  cd ..
+  cd processing
+  rmdir frames
+  mkdir frames
+  install\processing-4.2\processing-java --output=frames\ --force --sketch=genArtProg --run
   cd ..
   cd local
   del "%file_name%"

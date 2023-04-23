@@ -2,14 +2,14 @@
 
 
 set "Soundfield_dir=%cd%"
-if NOT exist \processing\install (
+if NOT exist processing\install\ (
   cd processing
   mkdir install
   powershell -Command "& {Invoke-WebRequest -Uri 'https://github.com/processing/processing4/releases/download/processing-1292-4.2/processing-4.2-windows-x64.zip' -Outfile '%Soundfield_dir%\processing\install\download'}"
   cd install
   ren download download.zip
   tar -xf download.zip
-   
+  cd %Soundfield_dir%
 )
 
 
