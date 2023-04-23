@@ -3,7 +3,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import random
 from scipy.signal import butter, sosfilt
+from scipy.interpolate import interp1d
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_absolute_percentage_error
 from mlxtend.preprocessing import standardize
@@ -362,14 +364,35 @@ def CombineAndSave(mrnn, csd, filename = "output.csv"):
     # Save to file
     df.to_csv(filename, index=False, header=False)
 
+#---------- Map MRNN Values ----------#
+
+def mapToHighest(mrnn):
+    highVal = mrnn.iloc[:,0].max()
+    highAro = mrnn.iloc[:,1].max()
+
+    valMap = interp1d([0,highVal],[0,1])
+    aroMap = interp1d([0,highAro],[0,1])
+
+    mrnn.iloc[:,0] = mrnn.iloc[:,0].apply(lambda x: float(valMap(x)))
+    mrnn.iloc[:,1] = mrnn.iloc[:,1].apply(lambda x: float(aroMap(x)))
+
+    return mrnn
+
+def mapToRandom(mrnn):
+    mrnn.iloc[:,0] = mrnn.iloc[:,0].apply(lambda x: random.random())
+    mrnn.iloc[:,1] = mrnn.iloc[:,0].apply(lambda x: random.random())
+
+    return mrnn
+
 #---------- Run Models ----------#
 
 if __name__ == "__main__":
-    filepath = "../TestData/Recordings/S3/AnnaBurns_004_EPOCX_182929_2023.04.22T11.29.48.05.00.md.csv"
+    filepath = "../TestData/Recordings/S2/NickVelicer_006_3272023_EPOCX_180417_2023.03.27T14.35.25.05.00.md.bp.csv"
 
     mrnn_data = FunctionReadInCsv(filepath)
     mrnn_pred = FunctionRunModel(mrnn_data)
+    mrnn_map = mapToRandom(mrnn_pred)
 
     csd_pred = CNN_SAE_DNN(filepath)
 
-    CombineAndSave(mrnn_pred, csd_pred, filename = "../processing/genArtProg/output.csv")
+    CombineAndSave(mrnn_map, csd_pred, filename = "../processing/genArtProg/output.csv")

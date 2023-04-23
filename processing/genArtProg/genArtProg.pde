@@ -2,7 +2,7 @@ int w = 1920;
 int h = 1080;
 
 int frame = 0;
-boolean save = true;
+boolean save = false;
 
 Table table;
 

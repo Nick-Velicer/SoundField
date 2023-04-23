@@ -42,7 +42,7 @@ void magnetSim(float x, float y, float hu){
         if(shown[i][j]){
           rotate(magnets[i][j]);
           strokeWeight(2*2);
-          stroke(hue(b)*(abs(magnets[i][j]) % 3.14),saturation(b)*(abs(magnets[i][j]) % 3.14),brightness(b)*(abs(magnets[i][j]) % 3.14),255-score*31);
+          stroke(hue(b),saturation(b)*(abs(magnets[i][j]) % 3.14),brightness(b)*(abs(magnets[i][j]) % 3.14),255-score*31);
           line(10*2,0,0,0);
           if (abs(magnets[i][j]) % 3.14 < .2) {
             stroke(a);
