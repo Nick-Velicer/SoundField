@@ -387,7 +387,7 @@ def mapToRandom(mrnn):
 #---------- Run Models ----------#
 
 if __name__ == "__main__":
-    filepath = "../TestData/Recordings/S2/NickVelicer_006_3272023_EPOCX_180417_2023.03.27T14.35.25.05.00.md.bp.csv"
+    filepath = "output.csv"
 
     mrnn_data = FunctionReadInCsv(filepath)
     mrnn_pred = FunctionRunModel(mrnn_data)

@@ -9,19 +9,15 @@ if exist "%file_name%" (
   set "local_dir=%cd%"
   echo File Found
   cd ..
-  set "processing_dir='%cd%\processing'"
-  cd Sprints\Sprint13\MLMODEL
-  copy "%local_dir%\output.csv" .
+  copy local\output.csv models\
+  cd models
   python prog.3.0.py
-  
   cd ..
-  copy "MRNN\output.csv" %processing_dir%
-  cd ..
-  cd ..
+  set "Soundfield_dir=%cd%"
   cd processing
-  rmdir frames
-  mkdir frames
-  install\processing-4.2\processing-java --output=frames\ --force --sketch=genArtProg --run
+
+  install\processing-4.2\processing-java --output=%cd%\frames --force --sketch=%cd%\genArtProg --run
+  %Soundfield_dir%\processing\install\processing-4.2\tools\MovieMaker\tool\ffmpeg.exe -framerate 24 -i "genArtProg\frames\%05d.png" -c:v libx264 -r 24 -pix_fmt yuv420p output.mp4
   cd ..
   cd local
   del "%file_name%"

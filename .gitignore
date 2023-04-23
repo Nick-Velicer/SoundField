@@ -8,3 +8,7 @@
 
 processing/install
 processing/frames
+processing/genArtProg/frames
+processing/output.mp4
+
+*.csv
