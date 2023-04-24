@@ -1,6 +1,6 @@
 @echo off
 
-
+call venvSetup.bat
 set "Soundfield_dir=%cd%"
 if NOT exist processing\install\ (
   cd processing

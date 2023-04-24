@@ -388,11 +388,11 @@ def mapToRandom(mrnn):
 
 if __name__ == "__main__":
     filepath = "output.csv"
-
+    
     mrnn_data = FunctionReadInCsv(filepath)
     mrnn_pred = FunctionRunModel(mrnn_data)
     mrnn_map = mapToRandom(mrnn_pred)
-
+    
     csd_pred = CNN_SAE_DNN(filepath)
-
+    csd_pred = csd_pred.reset_index(drop=True)
     CombineAndSave(mrnn_map, csd_pred, filename = "../processing/genArtProg/output.csv")

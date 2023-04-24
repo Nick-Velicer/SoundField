@@ -88,20 +88,17 @@ class UploadFileView(generics.CreateAPIView):
     
     def post(self, request, *args, **kwargs):
         file = request.FILES['file']
-        session_df = pd.read_csv(file)
-        # session = Session(sampling_rate=128)
-        # session.save()
-        # logger.log("New Session ID: " + str(session.id))
         
+        #space for preprocessing/data cleaning
         time.sleep(3)
         
-        #do whatever cleanup/classifying needs to be done on the data here
-        #while it's in a pandas dataframe
-
-        #path = default_storage.save('/tempstorage', session_df.head().to_csv(path_or_buf=response, sep=',', index=False))
-        response = HttpResponse(
-        content_type='text/csv',
-        headers={'Content-Disposition': 'attachment; filename="processed_data.csv"'},
-        )
-        session_df.to_csv(path_or_buf=response, index=False)
+        # Read the CSV file and return it as a response
+        data = file.read().decode('utf-8')
+        io_string = io.StringIO(data)
+        reader = csv.reader(io_string)
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="result.csv"'
+        writer = csv.writer(response)
+        for row in reader:
+            writer.writerow(row)
         return response
