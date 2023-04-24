@@ -49,7 +49,7 @@ def FunctionRunModel(df):
     # TargetVariable=['valence', 'arousal']
     # df['subject_num'] = 1
     
-    Predictors=['EEG.AF3', 'EEG.F7', 'EEG.F3', 'EEG.FC5', 'EEG.T7', 'EEG.P7', 'EEG.O1','EEG.O2', 'EEG.P8', 'EEG.T8', 'EEG.FC6', 'EEG.F4',  'EEG.F8' , 'EEG.AF4', 'subject_num']
+    Predictors=['EEG.AF3', 'EEG.F7', 'EEG.F3', 'EEG.FC5', 'EEG.T7', 'EEG.P7', 'EEG.O1','EEG.O2', 'EEG.P8', 'EEG.T8', 'EEG.FC6', 'EEG.F4',  'EEG.F8' , 'EEG.AF4']
     X=df[Predictors].values
     # y=df[TargetVariable].values
 
@@ -68,7 +68,8 @@ def FunctionRunModel(df):
     # from sklearn.model_selection import train_test_split
     # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-    model = keras.models.load_model('MRNN_model')
+    model = load_model("MRNN_model/MRNNModel.2.0.h5")
+    model.load_weights("MRNN_model/MRNNWeights.2.0")
 
     # Generating Predictions on testing data
     Predictions=model.predict(X)

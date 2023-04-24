@@ -24,7 +24,7 @@ if (not %backend_status%=="Up") and (not %container_b_status%=="Up")(
     start cmd.exe /c docker-compose up
 )
 
-start cmd.exe /c local\dataIngest.bat
+start cmd.exe /c dataIngest.bat
 cd frontend/soundfield_app
 npm run electron-dev &
 cd ..
