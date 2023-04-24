@@ -40,6 +40,16 @@ h3 {
     font-family: sans-serif;
 }
 
+h4 {
+    color: white;
+    text-align: left;
+    font-family: sans-serif;
+    padding-left: 18px;
+    margin-right: 60%;
+    font-size: 16px;
+    margin-bottom: -10px;
+}
+
 .columns {
     display: inline-block;
 }
