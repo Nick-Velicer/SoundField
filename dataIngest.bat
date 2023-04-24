@@ -14,6 +14,8 @@ if exist "%file_name%" (
   install\processing-4.2\tools\MovieMaker\tool\ffmpeg.exe -y -framerate 24 -i "genArtProg\frames\%%05d.png" -c:v libx264 -r 24 -pix_fmt yuv420p output.mp4
   cd ..
   ::rd /s /q processing\genArtProg\frames\ 
+  copy processing\output.mp4 frontend\soundfield_app\src\output.mp4
+  del processing\output.mp4
   del local\output.csv
   del models\output.csv
   del processing\genArtProg\output.csv
